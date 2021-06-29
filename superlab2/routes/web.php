@@ -1,5 +1,11 @@
 <?php
 
+use App\Http\Controllers\ContactosController;
+use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\GaleriaController;
+use App\Http\Controllers\InicioController;
+use App\Http\Controllers\ServiciosController;
+use App\Http\Controllers\SomosController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,12 +20,19 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/web/', function () {
-    return view('inicio');
+    return view('home');
 });
 Route::get('/', function () {
-    return view('inicio');
+    return view('home');
 });
 
 Route::get('/admin/', function () {
     return view('administrador');
 });
+
+Route::resource('employees', EmployeeController::class);
+Route::resource('servicios', ServiciosController::class);
+Route::resource('inicio', InicioController::class);
+Route::resource('somos', SomosController::class);
+Route::resource('contactos', ContactosController::class);
+Route::resource('galeria', GaleriaController::class);
