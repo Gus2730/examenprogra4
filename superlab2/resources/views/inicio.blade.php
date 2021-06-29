@@ -174,14 +174,12 @@
                                     </div>
                                 </div>
                             </div>
-                            @if(isset($servicios))
                             @foreach ($servicios as $ser)
                             <div>
                                 <h1>{{$ser->nombre}}</h1>
                                 <h4>{{$ser->descripcion}}</h4>
                             </div>
                             @endforeach
-                            @endif
                         </div>
                         <div class="tab-pane container" id="service-fourth">
                             <h1>HOLA4</h1>

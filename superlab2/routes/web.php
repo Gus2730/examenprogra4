@@ -27,7 +27,10 @@ Route::get('/web/', function () {
     return view('inicio',['servicios' => $servicios,'inicios' => $inicios, 'somos' => $somos]);
 });
 Route::get('/', function () {
-    return view('inicio');
+    $servicios = DB::table('servicios')->get();
+    $inicios = DB::table('inicios')->first();
+    $somos = DB::table('somos')->first();
+    return view('inicio',['servicios' => $servicios,'inicios' => $inicios, 'somos' => $somos]);
 });
 
 Route::get('/admin/', function () {
