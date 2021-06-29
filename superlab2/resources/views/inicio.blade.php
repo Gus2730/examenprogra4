@@ -41,10 +41,20 @@
     <div class="container">
         <div class="row">
             <center>
+                <br>
+                <div class="" style="height: 150px;">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-12 col-lg-12">
+                                <img src="img/banner.png" width="100%" height="150px">
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="col-flex">
 
                     <br>
-                    <ul class="nav nav-pills">
+                    <ul class="nav nav-pills justify-content-center">
                         <li class="nav-item">
                             <a class="nav-link active" data-toggle="pill" href="#service-one">Inicio</a>
                         </li>
@@ -144,8 +154,8 @@
                                 }
 
                                 .jumbotron-sm {
-                                    padding-top: 24px;
-                                    padding-bottom: 24px;
+                                    padding-top: 5px;
+                                    padding-bottom: 5px;
                                 }
 
                                 .jumbotron small {
