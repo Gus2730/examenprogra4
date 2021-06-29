@@ -81,8 +81,15 @@
                                 <div class="container">
                                     <div class="row">
                                         <div class="col-sm-12 col-lg-12">
+                                            @if(isset($inicios))
                                             <h1 class="h1" id="titulo1">
-                                                Titulo </h1>
+                                                {{$inicios->titulo_inicio}}
+                                            </h1>
+                                            @else
+                                            <h1 class="h1" id="titulo1">
+                                                Ejemplo de titulo
+                                            </h1>
+                                            @endif
                                         </div>
                                     </div>
                                 </div>
@@ -93,25 +100,16 @@
                                         <div class="well well-sm">
                                             <form>
                                                 <div class="row">
-                                                    <div class="d-flex">
+                                                    <div class="col-12">
                                                         <div class="form-group">
                                                             <h5><label class="col-1-left" for="">
                                                                     Descripción:
                                                                 </label></h5>
-                                                            <label style="text-align:justify;" for="">Al contrario del pensamiento popular,
-                                                                el texto de Lorem Ipsum no es simplemente texto aleatorio.
-                                                                Tiene sus raices en una pieza cl´sica de la literatura del Latin, que data del año 45 antes de Cristo,
-                                                                haciendo que este adquiera mas de 2000 años de antiguedad. Richard McClintock,
-                                                                un profesor de Latin de la Universidad de Hampden-Sydney en Virginia,
-                                                                encontró una de las palabras más oscuras de la lengua del latín, "consecteur", en un pasaje de Lorem Ipsum,
-                                                                y al seguir leyendo distintos textos del latín, descubrió la fuente indudable.
-                                                                Lorem Ipsum viene de las secciones 1.10.32 y 1.10.33 de "de Finnibus Bonorum et Malorum"
-                                                                (Los Extremos del Bien y El Mal) por Cicero, escrito en el año 45 antes de Cristo.
-                                                                Este libro es un tratado de teoría de éticas, muy popular durante el Renacimiento.
-                                                                La primera linea del Lorem Ipsum, "Lorem ipsum dolor sit amet..",
-                                                                viene de una linea en la sección 1.10.32 El trozo de texto estándar de Lorem Ipsum usado desde el año 1500 es reproducido debajo para aquellos interesados.
-                                                                Las secciones 1.10.32 y 1.10.33 de "de Finibus Bonorum et Malorum" por Cicero son también reproducidas en su forma original exacta,
-                                                                acompañadas por versiones en Inglés de la traducción realizada en 1914 por H. Rackham.</label>
+                                                            @if(isset($inicios))
+                                                            <label style="text-align:justify;" for="">{{$inicios->descripcion_inicio}}</label>
+                                                            @else
+                                                            <label style="text-align:justify;" for="">Ejemplo descripcion</label>
+                                                            @endif
                                                         </div>
                                                     </div>
                                                 </div>
@@ -127,8 +125,15 @@
                                 <div class="container">
                                     <div class="row">
                                         <div class="col-sm-12 col-lg-12">
+                                            @if(isset($somos))
                                             <h1 class="h1" id="titulo1">
-                                                Titulo </h1>
+                                                {{$somos->titulo_somos}}
+                                            </h1>
+                                            @else
+                                            <h1 class="h1" id="titulo1">
+                                                Ejemplo de titulo
+                                            </h1>
+                                            @endif
                                         </div>
                                     </div>
                                 </div>
@@ -139,25 +144,16 @@
                                         <div class="well well-sm">
                                             <form>
                                                 <div class="row">
-                                                    <div class="d-flex">
+                                                    <div class="col-12">
                                                         <div class="form-group">
                                                             <h5><label for="">
                                                                     Descripción:
                                                                 </label></h5>
-                                                            <label style="text-align:justify;" for="">Al contrario del pensamiento popular,
-                                                                el texto de Lorem Ipsum no es simplemente texto aleatorio.
-                                                                Tiene sus raices en una pieza cl´sica de la literatura del Latin, que data del año 45 antes de Cristo,
-                                                                haciendo que este adquiera mas de 2000 años de antiguedad. Richard McClintock,
-                                                                un profesor de Latin de la Universidad de Hampden-Sydney en Virginia,
-                                                                encontró una de las palabras más oscuras de la lengua del latín, "consecteur", en un pasaje de Lorem Ipsum,
-                                                                y al seguir leyendo distintos textos del latín, descubrió la fuente indudable.
-                                                                Lorem Ipsum viene de las secciones 1.10.32 y 1.10.33 de "de Finnibus Bonorum et Malorum"
-                                                                (Los Extremos del Bien y El Mal) por Cicero, escrito en el año 45 antes de Cristo.
-                                                                Este libro es un tratado de teoría de éticas, muy popular durante el Renacimiento.
-                                                                La primera linea del Lorem Ipsum, "Lorem ipsum dolor sit amet..",
-                                                                viene de una linea en la sección 1.10.32 El trozo de texto estándar de Lorem Ipsum usado desde el año 1500 es reproducido debajo para aquellos interesados.
-                                                                Las secciones 1.10.32 y 1.10.33 de "de Finibus Bonorum et Malorum" por Cicero son también reproducidas en su forma original exacta,
-                                                                acompañadas por versiones en Inglés de la traducción realizada en 1914 por H. Rackham.</label>
+                                                            @if(isset($somos))
+                                                            <label style="text-align:justify;" for="">{{$somos->descripcion_somos}}</label>
+                                                            @else
+                                                            <label style="text-align:justify;" for="">Ejemplo de descripcion</label>
+                                                            @endif
                                                         </div>
                                                     </div>
                                                 </div>
@@ -179,10 +175,10 @@
                                 </div>
                             </div>
                             @foreach ($servicios as $ser)
-                                <div>
-                                    <h1>{{$ser->nombre}}</h1>
-                                    <h4>{{$ser->descripcion}}</h4>
-                                </div>
+                            <div>
+                                <h1>{{$ser->nombre}}</h1>
+                                <h4>{{$ser->descripcion}}</h4>
+                            </div>
                             @endforeach
                         </div>
                         <div class="tab-pane container" id="service-fourth">
