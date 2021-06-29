@@ -46,7 +46,7 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-sm-12 col-lg-12">
-                                <img src="img/banner.png" width="100%" height="150px">
+                                <img src="{{asset('img/banner.png')}}" width="100%" height="150px">
                             </div>
                         </div>
                     </div>
@@ -204,21 +204,21 @@
                                         <div class="carousel-inner" style="width: 500px; height: 300px; border-radius: 20px;">
 
                                             <div class="carousel-item active">
-                                                <img id="item-display" src="img/banner.png" class="d-block w-100" height="300px" width="300px" alt="...">
+                                                <img id="item-display" src="{{asset('img/banner.png')}}" class="d-block w-100" height="300px" width="300px" alt="...">
                                                 <div class="carousel-caption">
                                                     <h3>Los Angeles</h3>
                                                     <p>LA is always so much fun!</p>
                                                 </div>
                                             </div>
                                             <div class="carousel-item">
-                                                <img id="item-display" src="img/mine.jpg" class="d-block w-100" height="300px" width="300px" alt="...">
+                                                <img id="item-display" src="{{asset('img/mine.jpg')}}" class="d-block w-100" height="300px" width="300px" alt="...">
                                                 <div class="carousel-caption">
                                                     <h3>Los Angeles</h3>
                                                     <p>LA is always so much fun!</p>
                                                 </div>
                                             </div>
                                             <div class="carousel-item">
-                                                <img id="item-display" src="img/banner.png" class="d-block w-100" height="300px" width="300px" alt="...">
+                                                <img id="item-display" src="{{asset('img/banner.png')}}" class="d-block w-100" height="300px" width="300px" alt="...">
                                                 <div class="carousel-caption">
                                                     <h3>Los Angeles</h3>
                                                     <p>LA is always so much fun!</p>
