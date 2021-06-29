@@ -163,6 +163,7 @@
                                 </div>
                             </div>
                         </div>
+
                         <div class="tab-pane container" id="service-three">
                             <div class="jumbotron jumbotron-sm">
                                 <div class="container">
@@ -181,6 +182,7 @@
                             </div>
                             @endforeach
                         </div>
+
                         <div class="tab-pane container" id="service-fourth">
                             <div class="jumbotron jumbotron-sm">
                                 <div class="container">
@@ -201,24 +203,24 @@
                                             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
                                             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
                                         </div> -->
-                                        <div class="carousel-inner" style="width: 500px; height: 300px; border-radius: 20px;">
+                                        <div class="carousel-inner" style="width: 500px; height: 400px;">
 
                                             <div class="carousel-item active">
-                                                <img id="item-display" src="{{asset('img/banner.png')}}" class="d-block w-100" height="300px" width="300px" alt="...">
+                                                <img id="item-display" src="{{asset('img/banner.png')}}" class="d-block w-100" height="300px" width="300px" alt="..." style="border-radius: 20px;">
                                                 <div class="carousel-caption">
                                                     <h3>Los Angeles</h3>
                                                     <p>LA is always so much fun!</p>
                                                 </div>
                                             </div>
                                             <div class="carousel-item">
-                                                <img id="item-display" src="{{asset('img/mine.jpg')}}" class="d-block w-100" height="300px" width="300px" alt="...">
+                                                <img id="item-display" src="{{asset('img/mine.jpg')}}" class="d-block w-100" height="300px" width="300px" alt="..." style="border-radius: 20px;">
                                                 <div class="carousel-caption">
                                                     <h3>Los Angeles</h3>
                                                     <p>LA is always so much fun!</p>
                                                 </div>
                                             </div>
                                             <div class="carousel-item">
-                                                <img id="item-display" src="{{asset('img/banner.png')}}" class="d-block w-100" height="300px" width="300px" alt="...">
+                                                <img id="item-display" src="{{asset('img/banner.png')}}" class="d-block w-100" height="300px" width="300px" alt="..." style="border-radius: 20px;">
                                                 <div class="carousel-caption">
                                                     <h3>Los Angeles</h3>
                                                     <p>LA is always so much fun!</p>
@@ -234,10 +236,25 @@
                                             </a>
                                         </div>
                                     </div>
+                                    <br><br><br><br><br>
                                 </center>
                             </div>
-
+                            <style>
+                                .carousel-caption {
+                                    position: absolute;
+                                    height: 400px;
+                                    right: 15%;
+                                    top: 300px;
+                                    left: 15%;
+                                    z-index: 10;
+                                    padding-top: 20px;
+                                    padding-bottom: 20px;
+                                    color: #fff;
+                                    text-align: center;
+                                }
+                            </style>
                         </div>
+
                         <div class="tab-pane container" id="service-five">
                             <!------ Include the above in your HEAD tag ---------->
 
