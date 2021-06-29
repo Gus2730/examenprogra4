@@ -23,7 +23,7 @@ Route::get('/web/', function () {
     return view('inicio');
 });
 Route::get('/', function () {
-    return view('home');
+    return view('inicio');
 });
 
 Route::get('/admin/', function () {
