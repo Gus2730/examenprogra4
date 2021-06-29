@@ -20,10 +20,10 @@
 
 
 
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
 
     <title>Inicio</title>
 </head>
@@ -47,13 +47,13 @@
             <a class="nav-link" data-toggle="pill" href="#service-five">Contacto</a>
         </li>
     </ul>
-
+    <br><br>
     <div id="myTabContent" class="tab-content">
-        
+
         <div class="tab-pane container active" id="service-one" style="font-size: 18px;">
             <h1>HOLA1</h1>
         </div>
-        
+
         <div class="tab-pane container" id="service-two" style="font-size: 18px;">
             <h1>HOLA2</h1>
         </div>
@@ -64,7 +64,81 @@
             <h1>HOLA4</h1>
         </div>
         <div class="tab-pane container" id="service-five">
-            <h1>HOLA5</h1>
+            <!------ Include the above in your HEAD tag ---------->
+
+            <div class="jumbotron jumbotron-sm">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12 col-lg-12">
+                            <h1 class="h1" id="titulo1">
+                                Contáctanos </h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="well well-sm">
+                            <form>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="name">
+                                                Nombre</label>
+                                            <input type="text" class="form-control" id="name" placeholder="Ingrese el nombre" required="required" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="email">
+                                                Correo electronico</label>
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span>
+                                                </span>
+                                                <input type="email" class="form-control" id="email" placeholder="Ingrese el email" required="required" />
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="name">
+                                                Mensaje</label>
+                                            <textarea name="message" id="message" class="form-control" rows="9" cols="25" required="required" placeholder="Mensaje"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <button type="submit" class="btn btn-primary pull-right" id="btnContactUs">
+                                            Enviar</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+            <style>
+                .jumbotron {
+                    background: #358CCE;
+                    color: #FFF;
+                    border-radius: 0px;
+                }
+
+                .jumbotron-sm {
+                    padding-top: 24px;
+                    padding-bottom: 24px;
+                }
+
+                .jumbotron small {
+                    color: #FFF;
+                }
+
+                #titulo1 small {
+                    font-size: 24px;
+                }
+            </style>
         </div>
 </body>
 
