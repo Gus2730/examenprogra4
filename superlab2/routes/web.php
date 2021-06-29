@@ -22,15 +22,15 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/web/', function () {
     $servicios = DB::table('servicios')->get();
-    $inicios = DB::table('inicios')->first();
-    $somos = DB::table('somos')->first();
-    return view('inicio',['servicios' => $servicios,'inicios' => $inicios, 'somos' => $somos]);
+    $secciones = DB::table('secciones')->get();
+    $galerias = DB::table('galerias')->get();
+    return view('inicio',['servicios' => $servicios,'secciones' => $secciones, 'galerias' => $galerias]);
 });
 Route::get('/', function () {
     $servicios = DB::table('servicios')->get();
-    $inicios = DB::table('inicios')->first();
-    $somos = DB::table('somos')->first();
-    return view('inicio',['servicios' => $servicios,'inicios' => $inicios, 'somos' => $somos]);
+    $secciones = DB::table('secciones')->get();
+    $galerias = DB::table('galerias')->get();
+    return view('inicio',['servicios' => $servicios,'secciones' => $secciones, 'galerias' => $galerias]);
 });
 
 Route::get('/admin/', function () {

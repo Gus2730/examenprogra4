@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSomosTable extends Migration
+class CreateSeccionesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,14 @@ class CreateSomosTable extends Migration
      */
     public function up()
     {
-        Schema::create('somos', function (Blueprint $table) {
+        Schema::create('secciones', function (Blueprint $table) {
             $table->id();
-            $table->string('titulo_somos',200);
-            $table->string('descripcion_somos',500);
+            $table->string('titulo',200);
+            $table->string('descripcion',500);
+            $table->string('banner',500);
+            $table->string('seccion',100);
             $table->timestamps();
+
         });
     }
 
@@ -28,6 +31,6 @@ class CreateSomosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('somos');
+        Schema::dropIfExists('secciones');
     }
 }

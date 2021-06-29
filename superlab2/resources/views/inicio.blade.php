@@ -81,39 +81,29 @@
                                 <div class="container">
                                     <div class="row">
                                         <div class="col-sm-12 col-lg-12">
-                                            @if(isset($inicios))
+                                            @foreach($secciones as $sec)
+                                            @if($sec->seccion == 'inicio')
                                             <h1 class="h1" id="titulo1">
-                                                {{$inicios->titulo_inicio}}
-                                            </h1>
-                                            @else
-                                            <h1 class="h1" id="titulo1">
-                                                Ejemplo de titulo
+                                                {{$sec->titulo}}
                                             </h1>
                                             @endif
+                                            @endforeach
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="container">
                                 <div class="row">
-                                    <div class="col-ms-8">
-                                        <div class="well well-sm">
-                                            <form>
-                                                <div class="row">
-                                                    <div class="col-12">
-                                                        <div class="form-group">
-                                                            <h5><label class="col-1-left" for="">
-                                                                    Descripción:
-                                                                </label></h5>
-                                                            @if(isset($inicios))
-                                                            <label style="text-align:justify;" for="">{{$inicios->descripcion_inicio}}</label>
-                                                            @else
-                                                            <label style="text-align:justify;" for="">Ejemplo descripcion</label>
-                                                            @endif
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </form>
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <h5><label class="col-1-left" for="">
+                                                    Descripción:
+                                                </label></h5>
+                                            @foreach($secciones as $sec)
+                                            @if($sec->seccion == 'inicio')
+                                            <label style="text-align:justify;" for="">{{$sec->descripcion}}</label>
+                                            @endif
+                                            @endforeach
                                         </div>
                                     </div>
                                 </div>
@@ -125,62 +115,76 @@
                                 <div class="container">
                                     <div class="row">
                                         <div class="col-sm-12 col-lg-12">
-                                            @if(isset($somos))
+                                            @foreach($secciones as $sec)
+                                            @if($sec->seccion == 'somos')
                                             <h1 class="h1" id="titulo1">
-                                                {{$somos->titulo_somos}}
-                                            </h1>
-                                            @else
-                                            <h1 class="h1" id="titulo1">
-                                                Ejemplo de titulo
+                                                {{$sec->titulo}}
                                             </h1>
                                             @endif
+                                            @endforeach
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container">
+                                <form>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="form-group">
+                                                <h5><label for="">
+                                                        Descripción:
+                                                    </label></h5>
+                                                @foreach($secciones as $sec)
+                                                @if($sec->seccion == 'somos')
+                                                <label style="text-align:justify;" for="">{{$sec->descripcion}}</label>
+                                                @endif
+                                                @endforeach
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="tab-pane container" id="service-three">
+                            <div class="jumbotron jumbotron-sm">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-sm-12 col-lg-12">
+                                            @foreach($secciones as $sec)
+                                            @if($sec->seccion == 'servicio')
+                                            <h1 class="h1" id="titulo1">
+                                                {{$sec->titulo}}
+                                            </h1>
+                                            @endif
+                                            @endforeach
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="container">
                                 <div class="row">
-                                    <div class="col-ms-8">
-                                        <div class="well well-sm">
-                                            <form>
-                                                <div class="row">
-                                                    <div class="col-12">
-                                                        <div class="form-group">
-                                                            <h5><label for="">
-                                                                    Descripción:
-                                                                </label></h5>
-                                                            @if(isset($somos))
-                                                            <label style="text-align:justify;" for="">{{$somos->descripcion_somos}}</label>
-                                                            @else
-                                                            <label style="text-align:justify;" for="">Ejemplo de descripcion</label>
-                                                            @endif
-                                                        </div>
-                                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <h5><label for="">
+                                                    Descripción:
+                                                </label></h5>
+                                            @foreach($secciones as $sec)
+                                            @if($sec->seccion == 'servicio')
+                                            <label style="text-align:justify;" for="">{{$sec->descripcion}}</label>
+                                            @endif
+                                            @endforeach
+                                            <div>
+                                                @foreach ($servicios as $ser)
+                                                <div>
+                                                    <h1>{{$ser->nombre}}</h1>
+                                                    <h4>{{$ser->descripcion}}</h4>
                                                 </div>
-                                            </form>
+                                                @endforeach
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="tab-pane container" id="service-three">
-                            <div class="jumbotron jumbotron-sm">
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col-sm-12 col-lg-12">
-                                            <h1 class="h1" id="titulo1">
-                                                Servicios </h1>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            @foreach ($servicios as $ser)
-                            <div>
-                                <h1>{{$ser->nombre}}</h1>
-                                <h4>{{$ser->descripcion}}</h4>
-                            </div>
-                            @endforeach
                         </div>
 
                         <div class="tab-pane container" id="service-fourth">
@@ -188,8 +192,30 @@
                                 <div class="container">
                                     <div class="row">
                                         <div class="col-sm-12 col-lg-12">
+                                            @foreach($secciones as $sec)
+                                            @if($sec->seccion == 'galeria')
                                             <h1 class="h1" id="titulo1">
-                                                Galería </h1>
+                                                {{$sec->titulo}}
+                                            </h1>
+                                            @endif
+                                            @endforeach
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <h5><label for="">
+                                                    Descripción:
+                                                </label></h5>
+                                            @foreach($secciones as $sec)
+                                            @if($sec->seccion == 'galeria')
+                                            <label style="text-align:justify;" for="">{{$sec->descripcion}}</label>
+                                            @endif
+                                            @endforeach
                                         </div>
                                     </div>
                                 </div>
@@ -262,8 +288,14 @@
                                 <div class="container">
                                     <div class="row">
                                         <div class="col-sm-12 col-lg-12">
+                                            @foreach($secciones as $sec)
+                                            @if($sec->seccion == 'contacto')
                                             <h1 class="h1" id="titulo1">
-                                                Contáctanos </h1>
+                                                {{$sec->titulo}}
+                                            </h1>
+                                            @endif
+                                            @endforeach
+
                                         </div>
                                     </div>
                                 </div>
@@ -271,6 +303,15 @@
                             <div class="container">
                                 <div class="row">
                                     <div class="col-md-12">
+                                        <br>
+                                        <h5><label for="">
+                                                Descripción:
+                                            </label></h5>
+                                        @foreach($secciones as $sec)
+                                        @if($sec->seccion == 'contacto')
+                                        <label style="text-align:justify;" for="">{{$sec->descripcion}}</label>
+                                        @endif
+                                        @endforeach
                                         <div class="well well-sm">
                                             <form method="post" action="{{ route('contactos.store') }}">
                                                 @csrf

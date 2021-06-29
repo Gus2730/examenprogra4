@@ -5,11 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Somos extends Model
+class Secciones extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'titulo_somos',
-        'descripcion_somos'
+        'titulo', 
+        'descripcion',
+        'banner',
+        'seccion'
     ];
 }

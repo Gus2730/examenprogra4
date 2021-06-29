@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Inicios;
+use App\Models\Secciones;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 
-class IniciosController extends Controller
+class SeccionesController extends Controller
 {
     /*  * Display a listing of the resource.
      *
@@ -14,7 +14,7 @@ class IniciosController extends Controller
      */
     public function index()
     {
-        $employee = Inicios::all();
+        $employee = Secciones::all();
         return view('inicio', compact('inicio'));
     }
 
@@ -36,11 +36,14 @@ class IniciosController extends Controller
      */
     public function store(Request $request)
     {
+
         $storeData = $request->validate([
-            'titulo_inicio' => 'required|max:200',
-            'descripcion_inicio' => 'required|max:500'
+            'titulo' => 'required|max:200',
+            'descripcion' => 'required|max:500',
+            'seccion' => 'required|max:100',
+            'banner' => 'required|max:200'
         ]);
-        $inicio = Inicios::create($storeData);
+        $inicio = Secciones::create($storeData);
 
         return redirect('/administrador')->with('completed', 'Inicio created!');
     }
@@ -60,7 +63,7 @@ class IniciosController extends Controller
             'descripcion_inicio' => 'required|max:500'
         ]);
 
-        Inicios::whereId($id)->update($data);
+        Secciones::whereId($id)->update($data);
         return redirect('/administrador')->with('completed', 'Inicio updated');
     }
 }
