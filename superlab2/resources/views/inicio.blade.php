@@ -182,7 +182,61 @@
                             @endforeach
                         </div>
                         <div class="tab-pane container" id="service-fourth">
-                            <h1>HOLA4</h1>
+                            <div class="jumbotron jumbotron-sm">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-sm-12 col-lg-12">
+                                            <h1 class="h1" id="titulo1">
+                                                Galería </h1>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <center>
+                                    <!-- form para el carrousel de las fotos del producto -->
+                                    <div id="carouselExampleControls" class="carousel carousel-dark slide carousel-fade" data-bs-ride="carousel">
+                                        <!-- <div class="carousel-indicators">
+                                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                        </div> -->
+                                        <div class="carousel-inner " style="width: 500px; height: 300px; border-radius: 20px;">
+
+                                            <div class="carousel-item ">
+                                                <img id="item-display" src="{{asset('img/banner.png')}}" class="d-block w-100" height="300px" width="300px" alt="...">
+                                                <div class="carousel-caption">
+                                                    <h3>Los Angeles</h3>
+                                                    <p>LA is always so much fun!</p>
+                                                </div>
+                                            </div>
+                                            <div class="carousel-item ">
+                                                <img id="item-display" src="{{asset('img/banner.png')}}" class="d-block w-100" height="300px" width="300px" alt="...">
+                                                <div class="carousel-caption">
+                                                    <h3>Los Angeles</h3>
+                                                    <p>LA is always so much fun!</p>
+                                                </div>
+                                            </div>
+                                            <div class="carousel-item ">
+                                                <img id="item-display" src="{{asset('img/banner.png')}}" class="d-block w-100" height="300px" width="300px" alt="...">
+                                                <div class="carousel-caption">
+                                                    <h3>Los Angeles</h3>
+                                                    <p>LA is always so much fun!</p>
+                                                </div>
+                                            </div>
+                                            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                <span class="sr-only">Previous</span>
+                                            </a>
+                                            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                <span class="sr-only">Next</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </center>
+                            </div>
+
                         </div>
                         <div class="tab-pane container" id="service-five">
                             <!------ Include the above in your HEAD tag ---------->
@@ -242,6 +296,13 @@
 
                             </div>
                             <style>
+                                @import url('https://fonts.googleapis.com/css?family=Lobster');
+
+                                body {
+                                    background-color: darkslategray;
+                                    font-family: 'Lobster';
+                                }
+
                                 .jumbotron {
                                     background: #358CCE;
                                     color: #FFF;
@@ -249,8 +310,8 @@
                                 }
 
                                 .jumbotron-sm {
-                                    padding-top: 5px;
-                                    padding-bottom: 5px;
+                                    padding-top: 24px;
+                                    padding-bottom: 24px;
                                 }
 
                                 .jumbotron small {
