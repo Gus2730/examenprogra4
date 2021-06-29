@@ -81,13 +81,15 @@
                                 <div class="container">
                                     <div class="row">
                                         <div class="col-sm-12 col-lg-12">
-                                            @foreach($secciones as $sec)
-                                            @if($sec->seccion == 'inicio')
+                                            @if(isset($inicio))
                                             <h1 class="h1" id="titulo1">
-                                                {{$sec->titulo}}
+                                                {{$inicio->titulo}}
+                                            </h1>
+                                            @else
+                                            <h1 class="h1" id="titulo1">
+                                                Ejemplo titulo
                                             </h1>
                                             @endif
-                                            @endforeach
                                         </div>
                                     </div>
                                 </div>
@@ -99,11 +101,11 @@
                                             <h5><label class="col-1-left" for="">
                                                     Descripción:
                                                 </label></h5>
-                                            @foreach($secciones as $sec)
-                                            @if($sec->seccion == 'inicio')
-                                            <label style="text-align:justify;" for="">{{$sec->descripcion}}</label>
+                                            @if(isset($inicio))
+                                            <label style="text-align:justify;" for=""> {{$inicio->descripcion}}</label>
+                                            @else
+                                            <label style="text-align:justify;" for="">Ejemplo descripcion</label>
                                             @endif
-                                            @endforeach
                                         </div>
                                     </div>
                                 </div>
@@ -115,48 +117,15 @@
                                 <div class="container">
                                     <div class="row">
                                         <div class="col-sm-12 col-lg-12">
-                                            @foreach($secciones as $sec)
-                                            @if($sec->seccion == 'somos')
+                                            @if(isset($somos))
                                             <h1 class="h1" id="titulo1">
-                                                {{$sec->titulo}}
+                                                {{$somos->titulo}}
+                                            </h1>
+                                            @else
+                                            <h1 class="h1" id="titulo1">
+                                                Ejemplo titulo
                                             </h1>
                                             @endif
-                                            @endforeach
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="container">
-                                <form>
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <div class="form-group">
-                                                <h5><label for="">
-                                                        Descripción:
-                                                    </label></h5>
-                                                @foreach($secciones as $sec)
-                                                @if($sec->seccion == 'somos')
-                                                <label style="text-align:justify;" for="">{{$sec->descripcion}}</label>
-                                                @endif
-                                                @endforeach
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                        <div class="tab-pane container" id="service-three">
-                            <div class="jumbotron jumbotron-sm">
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col-sm-12 col-lg-12">
-                                            @foreach($secciones as $sec)
-                                            @if($sec->seccion == 'servicio')
-                                            <h1 class="h1" id="titulo1">
-                                                {{$sec->titulo}}
-                                            </h1>
-                                            @endif
-                                            @endforeach
                                         </div>
                                     </div>
                                 </div>
@@ -168,11 +137,46 @@
                                             <h5><label for="">
                                                     Descripción:
                                                 </label></h5>
-                                            @foreach($secciones as $sec)
-                                            @if($sec->seccion == 'servicio')
-                                            <label style="text-align:justify;" for="">{{$sec->descripcion}}</label>
+                                            @if(isset($somos))
+                                            <label style="text-align:justify;" for=""> {{$somos->descripcion}}</label>
+                                            @else
+                                            <label style="text-align:justify;" for="">Ejemplo descripcion</label>
                                             @endif
-                                            @endforeach
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane container" id="service-three">
+                            <div class="jumbotron jumbotron-sm">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-sm-12 col-lg-12">
+                                            @if(isset($servicio))
+                                            <h1 class="h1" id="titulo1">
+                                                {{$servicio->titulo}}
+                                            </h1>
+                                            @else
+                                            <h1 class="h1" id="titulo1">
+                                                Ejemplo titulo
+                                            </h1>
+                                            @endif
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <h5><label for="">
+                                                    Descripción:
+                                                </label></h5>
+                                            @if(isset($servicio))
+                                            <label style="text-align:justify;" for=""> {{$servicio->descripcion}}</label>
+                                            @else
+                                            <label style="text-align:justify;" for="">Ejemplo descripcion</label>
+                                            @endif
                                             <div>
                                                 @foreach ($servicios as $ser)
                                                 <div>
@@ -192,14 +196,15 @@
                                 <div class="container">
                                     <div class="row">
                                         <div class="col-sm-12 col-lg-12">
-                                            @foreach($secciones as $sec)
-                                            @if($sec->seccion == 'galeria')
+                                            @if(isset($galeria))
                                             <h1 class="h1" id="titulo1">
-                                                {{$sec->titulo}}
+                                                {{$galeria->titulo}}
+                                            </h1>
+                                            @else
+                                            <h1 class="h1" id="titulo1">
+                                                Ejemplo titulo
                                             </h1>
                                             @endif
-                                            @endforeach
-
                                         </div>
                                     </div>
                                 </div>
@@ -211,11 +216,11 @@
                                             <h5><label for="">
                                                     Descripción:
                                                 </label></h5>
-                                            @foreach($secciones as $sec)
-                                            @if($sec->seccion == 'galeria')
-                                            <label style="text-align:justify;" for="">{{$sec->descripcion}}</label>
+                                            @if(isset($galeria))
+                                            <label style="text-align:justify;" for=""> {{$galeria->descripcion}}</label>
+                                            @else
+                                            <label style="text-align:justify;" for="">Ejemplo descripcion</label>
                                             @endif
-                                            @endforeach
                                         </div>
                                     </div>
                                 </div>
@@ -288,13 +293,15 @@
                                 <div class="container">
                                     <div class="row">
                                         <div class="col-sm-12 col-lg-12">
-                                            @foreach($secciones as $sec)
-                                            @if($sec->seccion == 'contacto')
+                                            @if(isset($contacto))
                                             <h1 class="h1" id="titulo1">
-                                                {{$sec->titulo}}
+                                                {{$contacto->titulo}}
+                                            </h1>
+                                            @else
+                                            <h1 class="h1" id="titulo1">
+                                                Ejemplo titulo
                                             </h1>
                                             @endif
-                                            @endforeach
 
                                         </div>
                                     </div>
@@ -307,11 +314,11 @@
                                         <h5><label for="">
                                                 Descripción:
                                             </label></h5>
-                                        @foreach($secciones as $sec)
-                                        @if($sec->seccion == 'contacto')
-                                        <label style="text-align:justify;" for="">{{$sec->descripcion}}</label>
+                                        @if(isset($contacto))
+                                        <label style="text-align:justify;" for=""> {{$contacto->descripcion}}</label>
+                                        @else
+                                        <label style="text-align:justify;" for="">Ejemplo descripcion</label>
                                         @endif
-                                        @endforeach
                                         <div class="well well-sm">
                                             <form method="post" action="{{ route('contactos.store') }}">
                                                 @csrf

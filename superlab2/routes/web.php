@@ -3,9 +3,8 @@
 use App\Http\Controllers\ContactosController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\GaleriaController;
-use App\Http\Controllers\InicioController;
+use App\Http\Controllers\SeccionesController;
 use App\Http\Controllers\ServiciosController;
-use App\Http\Controllers\SomosController;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
@@ -22,24 +21,31 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/web/', function () {
     $servicios = DB::table('servicios')->get();
-    $secciones = DB::table('secciones')->get();
+    $inicio = DB::table('secciones')->where('seccion', 'inicio')->first();
+    $somos = DB::table('secciones')->where('seccion', 'somos')->first();
+    $servicio = DB::table('secciones')->where('seccion', 'servicio')->first();
+    $galeria = DB::table('secciones')->where('seccion', 'galeria')->first();
+    $contacto = DB::table('secciones')->where('seccion', 'contacto')->first();
+
     $galerias = DB::table('galerias')->get();
-    return view('inicio',['servicios' => $servicios,'secciones' => $secciones, 'galerias' => $galerias]);
+    return view('inicio', ['servicios' => $servicios, 'inicio' => $inicio, 'somos' => $somos, 'servicio' => $servicio, 'galeria' => $galeria, 'contacto' => $contacto, 'galerias' => $galerias]);
 });
 Route::get('/', function () {
     $servicios = DB::table('servicios')->get();
-    $secciones = DB::table('secciones')->get();
+    $inicio = DB::table('secciones')->where('seccion', 'inicio')->first();
+    $somos = DB::table('secciones')->where('seccion', 'somos')->first();
+    $servicio = DB::table('secciones')->where('seccion', 'servicio')->first();
+    $galeria = DB::table('secciones')->where('seccion', 'galeria')->first();
+    $contacto = DB::table('secciones')->where('seccion', 'contacto')->first();
     $galerias = DB::table('galerias')->get();
-    return view('inicio',['servicios' => $servicios,'secciones' => $secciones, 'galerias' => $galerias]);
+    return view('inicio', ['servicios' => $servicios, 'inicio' => $inicio, 'somos' => $somos, 'servicio' => $servicio, 'galeria' => $galeria, 'contacto' => $contacto, 'galerias' => $galerias]);
 });
 
 Route::get('/admin/', function () {
     return view('administrador');
 });
 
-Route::resource('employees', EmployeeController::class);
 Route::resource('servicios', ServiciosController::class);
-Route::resource('inicio', InicioController::class);
-Route::resource('somos', SomosController::class);
+Route::resource('secciones', SeccionesController::class);
 Route::resource('contactos', ContactosController::class);
 Route::resource('galeria', GaleriaController::class);
