@@ -15,8 +15,8 @@ class ContactosController extends Controller
      */
     public function index()
     {
-        $employee = Contactos::all();
-        return view('inicio', compact('contactos'));
+        $contactos = Contactos::all();
+        return view('web', compact('contactos'));
     }
 
     /**
@@ -26,7 +26,7 @@ class ContactosController extends Controller
      */
     public function create()
     {
-        return view('inicio');
+        return view('web');
     }
 
     /**
@@ -42,9 +42,9 @@ class ContactosController extends Controller
             'correo' => 'required|max:200',
             'comentario' => 'required|max:500',
         ]);
-        $employee = Contactos::create($storeData);
+        $contactos = Contactos::create($storeData);
 
-        return redirect('/inicio')->with('completed', 'Contactos created!');
+        return redirect('/web')->with('completed', 'Contactos created!');
     }
 
     // /**
