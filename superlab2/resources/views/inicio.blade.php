@@ -190,7 +190,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="tab-pane container" id="service-fourth">
                             <div class="jumbotron jumbotron-sm">
                                 <div class="container">
@@ -285,7 +284,6 @@
                                 }
                             </style>
                         </div>
-
                         <div class="tab-pane container" id="service-five">
                             <!------ Include the above in your HEAD tag ---------->
 
