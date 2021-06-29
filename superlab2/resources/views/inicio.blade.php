@@ -201,24 +201,24 @@
                                             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
                                             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
                                         </div> -->
-                                        <div class="carousel-inner " style="width: 500px; height: 300px; border-radius: 20px;">
+                                        <div class="carousel-inner" style="width: 500px; height: 300px; border-radius: 20px;">
 
-                                            <div class="carousel-item ">
-                                                <img id="item-display" src="{{asset('img/banner.png')}}" class="d-block w-100" height="300px" width="300px" alt="...">
+                                            <div class="carousel-item active">
+                                                <img id="item-display" src="img/banner.png" class="d-block w-100" height="300px" width="300px" alt="...">
                                                 <div class="carousel-caption">
                                                     <h3>Los Angeles</h3>
                                                     <p>LA is always so much fun!</p>
                                                 </div>
                                             </div>
-                                            <div class="carousel-item ">
-                                                <img id="item-display" src="{{asset('img/banner.png')}}" class="d-block w-100" height="300px" width="300px" alt="...">
+                                            <div class="carousel-item">
+                                                <img id="item-display" src="img/mine.jpg" class="d-block w-100" height="300px" width="300px" alt="...">
                                                 <div class="carousel-caption">
                                                     <h3>Los Angeles</h3>
                                                     <p>LA is always so much fun!</p>
                                                 </div>
                                             </div>
-                                            <div class="carousel-item ">
-                                                <img id="item-display" src="{{asset('img/banner.png')}}" class="d-block w-100" height="300px" width="300px" alt="...">
+                                            <div class="carousel-item">
+                                                <img id="item-display" src="img/banner.png" class="d-block w-100" height="300px" width="300px" alt="...">
                                                 <div class="carousel-caption">
                                                     <h3>Los Angeles</h3>
                                                     <p>LA is always so much fun!</p>
@@ -306,12 +306,11 @@
                                 .jumbotron {
                                     background: #358CCE;
                                     color: #FFF;
-                                    border-radius: 0px;
                                 }
 
                                 .jumbotron-sm {
-                                    padding-top: 24px;
-                                    padding-bottom: 24px;
+                                    padding-top: 5px;
+                                    padding-bottom: 5px;
                                 }
 
                                 .jumbotron small {
