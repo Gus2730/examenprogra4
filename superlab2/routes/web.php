@@ -6,6 +6,7 @@ use App\Http\Controllers\GaleriaController;
 use App\Http\Controllers\InicioController;
 use App\Http\Controllers\ServiciosController;
 use App\Http\Controllers\SomosController;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,7 +21,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/web/', function () {
-    return view('inicio');
+    $servicios = DB::table('servicios')->get();
+    return view('inicio',['servicios' => $servicios]);
 });
 Route::get('/', function () {
     return view('inicio');

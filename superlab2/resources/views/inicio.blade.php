@@ -168,7 +168,22 @@
                             </div>
                         </div>
                         <div class="tab-pane container" id="service-three">
-                            <h1>HOLA3</h1>
+                            <div class="jumbotron jumbotron-sm">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-sm-12 col-lg-12">
+                                            <h1 class="h1" id="titulo1">
+                                                Servicios </h1>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            @foreach ($servicios as $ser)
+                                <div>
+                                    <h1>{{$ser->nombre}}</h1>
+                                    <h4>{{$ser->descripcion}}</h4>
+                                </div>
+                            @endforeach
                         </div>
                         <div class="tab-pane container" id="service-fourth">
                             <h1>HOLA4</h1>

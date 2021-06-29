@@ -18,6 +18,9 @@ class ContactosController extends Controller
         $contactos = Contactos::all();
         return view('web', compact('contactos'));
     }
+    public function getAllContactos(){
+        return Contactos::all();
+    }
 
     /**
      * Show the form for creating a new resource.
