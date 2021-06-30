@@ -43,7 +43,7 @@ class ServiciosController extends Controller
         ]);
         $servicios = Servicios::create($storeData);
 
-        return redirect('/admin')->with('completed', 'Servicio created!');
+        return redirect('/superlab2/admin')->with('completed', 'Servicio created!');
     }
 
     /**
@@ -84,7 +84,7 @@ class ServiciosController extends Controller
         ]);
 
         Servicios::whereId($request->input('idServicio'))->update($data);
-        return redirect('/admin')->with('completed', 'Servicio updated');
+        return redirect('/superlab2/admin')->with('completed', 'Servicio updated');
     }
 
     /**
@@ -98,6 +98,6 @@ class ServiciosController extends Controller
         $employee = Servicios::findOrFail($id);
         $employee->delete();
 
-        return redirect('/admin')->with('completed', 'Servicio deleted');
+        return redirect('/superlab2/admin')->with('completed', 'Servicio deleted');
     }   
 }

@@ -52,7 +52,7 @@ class SeccionesController extends Controller
 
         $secciones = Secciones::create($storeData);
 
-        return redirect('/admin')->with('completed', 'Inicio created!');
+        return redirect('/superlab2/admin')->with('completed', 'Inicio created!');
     }
 
 
@@ -87,6 +87,6 @@ class SeccionesController extends Controller
 
 
         Secciones::whereId($id)->update($storeData);
-        return redirect('/admin')->with('completed', 'Inicio updated');
+        return redirect('/superlab2/admin')->with('completed', 'Inicio updated');
     }
 }

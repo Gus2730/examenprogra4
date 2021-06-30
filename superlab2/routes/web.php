@@ -30,16 +30,7 @@ Route::get('/superlab2/web', function () {
     $galerias = DB::table('galerias')->get();
     return view('inicio', ['servicios' => $servicios, 'inicio' => $inicio, 'somos' => $somos, 'servicio' => $servicio, 'galeria' => $galeria, 'contacto' => $contacto, 'galerias' => $galerias]);
 });
-Route::get('/superlab2', function () {
-    $servicios = DB::table('servicios')->get();
-    $inicio = DB::table('secciones')->where('seccion', 'inicio')->first();
-    $somos = DB::table('secciones')->where('seccion', 'somos')->first();
-    $servicio = DB::table('secciones')->where('seccion', 'servicio')->first();
-    $galeria = DB::table('secciones')->where('seccion', 'galeria')->first();
-    $contacto = DB::table('secciones')->where('seccion', 'contacto')->first();
-    $galerias = DB::table('galerias')->get();
-    return view('inicio', ['servicios' => $servicios, 'inicio' => $inicio, 'somos' => $somos, 'servicio' => $servicio, 'galeria' => $galeria, 'contacto' => $contacto, 'galerias' => $galerias]);
-});
+
 
 Route::get('/superlab2/admin', function () {
     $servicios = DB::table('servicios')->get();

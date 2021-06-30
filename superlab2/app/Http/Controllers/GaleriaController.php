@@ -43,7 +43,7 @@ class GaleriaController extends Controller
         ]);
         $galeria = Galerias::create($storeData);
 
-        return redirect('/admin')->with('completed', 'Contactos created!');
+        return redirect('/superlab2/admin')->with('completed', 'Contactos created!');
     }
 
     /**
@@ -57,6 +57,6 @@ class GaleriaController extends Controller
         $galeria = Galerias::findOrFail($id);
         $galeria->delete();
 
-        return redirect('/index')->with('completed', 'Employee deleted');
+        return redirect('/superlab2/admin')->with('completed', 'Employee deleted');
     }
 }

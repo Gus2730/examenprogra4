@@ -47,6 +47,6 @@ class ContactosController extends Controller
         ]);
         $contactos = Contactos::create($storeData);
 
-        return redirect('/web')->with('completed', 'Contactos created!');
+        return redirect('/superlab2/web')->with('completed', 'Contactos created!');
     } 
 }
