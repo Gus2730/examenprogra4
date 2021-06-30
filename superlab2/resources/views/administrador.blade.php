@@ -228,6 +228,7 @@
                             <hr>
                             <div class="col-md-12">
                                 <label for="">Servicios</label>
+                                <a data-toggle="modal" style="color: white;" data-target="#exampleModalCenter2" class="btn btn-primary btn-sm">Agregar</a>
                                 <div id="tableview2">
                                     <table class="table table-striped table-dark" id="table">
                                         <thead>
@@ -238,10 +239,97 @@
                                             </tr>
                                         </thead>
                                         <tbody id="tbTable">
-
+                                        <tbody id="tbTable">
+                                            @foreach($servicios as $ser)
+                                            <tr>
+                                                <td>{{$ser->nombre}}</td>
+                                                <td>{{$ser->descripcion}}</td>
+                                                <td class="text-center">
+                                                    <a data-toggle="modal" onclick="Editar('{{$ser->nombre}}','{{$ser->descripcion}}','{{$ser->id}}')" data-target="#exampleModalCenter" class="btn btn-success btn-sm">Edit</a>
+                                                    <form action="{{ route('servicios.destroy', $ser->id)}}" method="post" style="display: inline-block">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button class="btn btn-danger btn-sm" type="submit">Delete</button>
+                                                    </form>
+                                                </td>
+                                            </tr>
+                                            @endforeach
                                         </tbody>
                                     </table>
                                 </div>
+                                <script>
+                                    function Editar(nombre, descripcion, id) {
+                                        document.getElementById('nombre').value = nombre;
+                                        document.getElementById('des').textContent = descripcion;
+                                        document.getElementById('idServicio').value = id;
+                                        console.log(descripcion);
+                                    }
+                                </script>
+                                <!-- Modal1 -->
+                                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLongTitle">Editar Servicio</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <form method="post" action="{{ route('servicios.update',0) }}" id=" EditServicio">
+                                                @csrf
+                                                @method('PATCH')
+                                                <div class="modal-body">
+                                                    <input type="hidden" id="idServicio" name="idServicio" value="">
+                                                    <div class="col-12">
+                                                        <label for="">Nombre:</label>
+                                                        <input name="nombre" id="nombre" value="" style="width: 97%;" placeholder="Nombre" type="text">
+                                                    </div>
+                                                    <div class="col-3">
+                                                        <label for="">Descripcion:</label>
+                                                        <textarea name="descripcion" id="des" cols="50" rows="10" placeholder="Descripcion"></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Salir</button>
+                                                    <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <!-- Modal2 -->
+                                <div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLongTitle">Editar Servicio</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <form method="post" action="{{ route('servicios.store') }}" >
+                                                @csrf
+                                                <div class="modal-body">
+                                                    <div class="col-12">
+                                                        <label for="">Nombre:</label>
+                                                        <input name="nombre" id="nombre" value="" style="width: 97%;" placeholder="Nombre" type="text">
+                                                    </div>
+                                                    <div class="col-3">
+                                                        <label for="">Descripcion:</label>
+                                                        <textarea name="descripcion" id="des" cols="50" rows="10" placeholder="Descripcion"></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Salir</button>
+                                                    <button type="submit" class="btn btn-primary">Guardar</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                     </div>

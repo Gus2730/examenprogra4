@@ -43,7 +43,7 @@ class ServiciosController extends Controller
         ]);
         $servicios = Servicios::create($storeData);
 
-        return redirect('/administrador')->with('completed', 'Servicio created!');
+        return redirect('/admin')->with('completed', 'Servicio created!');
     }
 
     /**
@@ -76,15 +76,15 @@ class ServiciosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
         $data = $request->validate([
             'nombre' => 'required|max:200',
             'descripcion' => 'required|max:500'
         ]);
 
-        Servicios::whereId($id)->update($data);
-        return redirect('/administrador')->with('completed', 'Servicio updated');
+        Servicios::whereId($request->input('idServicio'))->update($data);
+        return redirect('/admin')->with('completed', 'Servicio updated');
     }
 
     /**
@@ -98,6 +98,6 @@ class ServiciosController extends Controller
         $employee = Servicios::findOrFail($id);
         $employee->delete();
 
-        return redirect('/administrador')->with('completed', 'Servicio deleted');
+        return redirect('/admin')->with('completed', 'Servicio deleted');
     }   
 }
