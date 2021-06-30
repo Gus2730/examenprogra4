@@ -42,7 +42,15 @@ Route::get('/', function () {
 });
 
 Route::get('/admin/', function () {
-    return view('administrador');
+    $servicios = DB::table('servicios')->get();
+    $inicio = DB::table('secciones')->where('seccion', 'inicio')->first();
+    $somos = DB::table('secciones')->where('seccion', 'somos')->first();
+    $servicio = DB::table('secciones')->where('seccion', 'servicio')->first();
+    $galeria = DB::table('secciones')->where('seccion', 'galeria')->first();
+    $contacto = DB::table('secciones')->where('seccion', 'contacto')->first();
+    $galerias = DB::table('galerias')->get();
+    return view('administrador', ['servicios' => $servicios, 'inicio' => $inicio, 'somos' => $somos, 'servicio' => $servicio, 'galeria' => $galeria, 'contacto' => $contacto, 'galerias' => $galerias]);
+
 });
 
 Route::resource('servicios', ServiciosController::class);

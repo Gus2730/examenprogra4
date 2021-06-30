@@ -94,18 +94,42 @@
                     <div class="jumbotron jumbotron-sm">
                         <div class="container">
                             <div class="row">
-                                <label for="">Banner:</label>
-                                <div class="col-sm-12 col-lg-12">
-                                    <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg">
-                                </div>
-                                <br><br>
-                                <div><input style="width: 49%;" name="titulo" id="titulo" type="text" placeholder="Título"></div>
-
-                                <br>
-                                <br>
-                                <div><textarea name="Detalle" id="Detalle" cols="60" rows="10" placeholder="Detalle"></textarea></div>
-                                <div><button style="width: 200px;float: right;" class="btn btn-primary">Guardar</button></div>
-
+                                @if(isset($inicio))
+                                <form method="post" action="{{ route('secciones.update',$inicio->id) }}">
+                                    @csrf
+                                    @method('PATCH')
+                                    <label for="">Banner:</label>
+                                    <input type="hidden" id="seccion" name="seccion" value="inicio">
+                                    <div class="col-sm-12 col-lg-12">
+                                        <input type="file" id="banner" name="banner" accept="image/png, image/jpeg">
+                                    </div>
+                                    <br><br>
+                                    <div>
+                                        <input style="width: 49%;" value="{{$inicio->titulo}}" name="titulo" id="titulo" type="text" placeholder="Título">
+                                    </div>
+                                    <br>
+                                    <br>
+                                    <div><textarea name="descripcion" id="descripcion" cols="60" rows="10" placeholder="Descripcion">{{$inicio->descripcion}}</textarea></div>
+                                    <div><button type="submit" style="width: 200px;float: right;" class="btn btn-primary">Guardar</button></div>
+                                </form>
+                                @else
+                                <form method="post" action="{{ route('secciones.store') }}">
+                                    @csrf
+                                    <label for="">Banner:</label>
+                                    <input type="hidden" id="seccion" name="seccion" value="inicio">
+                                    <div class="col-sm-12 col-lg-12">
+                                        <input type="file" id="banner" name="banner" accept="image/png, image/jpeg">
+                                    </div>
+                                    <br><br>
+                                    <div>
+                                        <input style="width: 49%;" name="titulo" id="titulo" type="text" placeholder="Título">
+                                    </div>
+                                    <br>
+                                    <br>
+                                    <div><textarea name="descripcion" id="descripcion" cols="60" rows="10" placeholder="Descripcion"></textarea></div>
+                                    <div><button type="submit" style="width: 200px;float: right;" class="btn btn-primary">Guardar</button></div>
+                                </form>
+                                @endif
                             </div>
                         </div>
                     </div>
@@ -116,18 +140,42 @@
                     <div class="jumbotron jumbotron-sm">
                         <div class="container">
                             <div class="row">
-                                <label for="">Banner:</label>
-                                <div class="col-sm-12 col-lg-12">
-                                    <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg">
-                                </div>
-                                <br><br>
-                                <div><input style="width: 49%;" name="titulo" id="titulo" type="text" placeholder="Título"></div>
-
-                                <br>
-                                <br>
-                                <div><textarea name="Detalle" id="Detalle" cols="60" rows="10" placeholder="Detalle"></textarea></div>
-                                <div><button style="width: 200px;float: right;" class="btn btn-primary">Guardar</button></div>
-
+                                @if(isset($somos))
+                                <form method="post" action="{{ route('secciones.update',$somos->id) }}">
+                                    @csrf
+                                    @method('PATCH')
+                                    <label for="">Banner:</label>
+                                    <input type="hidden" id="seccion" name="seccion" value="somos">
+                                    <div class="col-sm-12 col-lg-12">
+                                        <input type="file" id="banner" name="banner" accept="image/png, image/jpeg">
+                                    </div>
+                                    <br><br>
+                                    <div>
+                                        <input style="width: 49%;" value="{{$somos->titulo}}" name="titulo" id="titulo" type="text" placeholder="Título">
+                                    </div>
+                                    <br>
+                                    <br>
+                                    <div><textarea name="descripcion" id="descripcion" cols="60" rows="10" placeholder="Descripcion">{{$somos->descripcion}}</textarea></div>
+                                    <div><button type="submit" style="width: 200px;float: right;" class="btn btn-primary">Guardar</button></div>
+                                </form>
+                                @else
+                                <form method="post" action="{{ route('secciones.store') }}">
+                                    @csrf
+                                    <label for="">Banner:</label>
+                                    <input type="hidden" id="seccion" name="seccion" value="somos">
+                                    <div class="col-sm-12 col-lg-12">
+                                        <input type="file" id="banner" name="banner" accept="image/png, image/jpeg">
+                                    </div>
+                                    <br><br>
+                                    <div>
+                                        <input style="width: 49%;" name="titulo" id="titulo" type="text" placeholder="Título">
+                                    </div>
+                                    <br>
+                                    <br>
+                                    <div><textarea name="descripcion" id="descripcion" cols="60" rows="10" placeholder="Descripcion"></textarea></div>
+                                    <div><button type="submit" style="width: 200px;float: right;" class="btn btn-primary">Guardar</button></div>
+                                </form>
+                                @endif
                             </div>
                         </div>
                     </div>
@@ -138,85 +186,183 @@
                     <div class="jumbotron jumbotron-sm">
                         <div class="container">
                             <div class="row">
-                                <label for="">Banner:</label>
-                                <div class="col-sm-12 col-lg-12">
-                                    <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg">
+                                @if(isset($servicio))
+                                <form method="post" action="{{ route('secciones.update',$servicio->id) }}">
+                                    @csrf
+                                    @method('PATCH')
+                                    <label for="">Banner:</label>
+                                    <input type="hidden" id="seccion" name="seccion" value="servicio">
+                                    <div class="col-sm-12 col-lg-12">
+                                        <input type="file" id="banner" name="banner" accept="image/png, image/jpeg">
+                                    </div>
+                                    <br><br>
+                                    <div>
+                                        <input style="width: 49%;" value="{{$servicio->titulo}}" name="titulo" id="titulo" type="text" placeholder="Título">
+                                    </div>
+                                    <br>
+                                    <br>
+                                    <div><textarea name="descripcion" id="descripcion" cols="60" rows="10" placeholder="Descripcion">{{$servicio->descripcion}}</textarea></div>
+                                    <div><button type="submit" style="width: 200px;float: right;" class="btn btn-primary">Guardar</button></div>
+                                </form>
+                                @else
+                                <form method="post" action="{{ route('secciones.store') }}">
+                                    @csrf
+                                    <label for="">Banner:</label>
+                                    <input type="hidden" id="seccion" name="seccion" value="servicio">
+                                    <div class="col-sm-12 col-lg-12">
+                                        <input type="file" id="banner" name="banner" accept="image/png, image/jpeg">
+                                    </div>
+                                    <br><br>
+                                    <div>
+                                        <input style="width: 49%;" name="titulo" id="titulo" type="text" placeholder="Título">
+                                    </div>
+                                    <br>
+                                    <br>
+                                    <div><textarea name="descripcion" id="descripcion" cols="60" rows="10" placeholder="Descripcion"></textarea></div>
+                                    <div><button type="submit" style="width: 200px;float: right;" class="btn btn-primary">Guardar</button></div>
+                                </form>
+                                @endif
+                            </div>
+
+
+                            <hr>
+                            <div class="col-md-12">
+                                <label for="">Servicios</label>
+                                <div id="tableview2">
+                                    <table class="table table-striped table-dark" id="table">
+                                        <thead>
+                                            <tr align="center">
+                                                <td>Nombre </td>
+                                                <td>Descripcion</td>
+                                                <td>Acción</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="tbTable">
+
+                                        </tbody>
+                                    </table>
                                 </div>
-                                <br><br>
-                                <div><input style="width: 49%;" name="titulo" id="titulo" type="text" placeholder="Título"></div>
-
-                                <br>
-                                <br>
-                                <div><textarea name="Detalle" id="Detalle" cols="60" rows="10" placeholder="Detalle"></textarea></div>
-                                <div><button style="width: 200px;float: right;" class="btn btn-primary">Guardar</button></div>
-
                             </div>
                         </div>
                     </div>
                 </div>
+
                 <div class="tab-pane container" id="service-fourth" style="font-size: 18px;">
                     <div class="jumbotron jumbotron-sm">
                         <div class="container">
                             <div class="row">
-                                <label for="">Banner:</label>
-                                <div class="col-sm-12 col-lg-12">
-                                    <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg">
-                                </div>
-                                <br><br>
-                                <div><input style="width: 49%;" name="titulo" id="titulo" type="text" placeholder="Título"></div>
-
-                                <br>
-                                <br>
-                                <div><textarea name="Detalle" id="Detalle" cols="60" rows="10" placeholder="Detalle"></textarea></div>
-                                <div><button style="width: 200px;float: right;" class="btn btn-primary">Guardar</button></div>
-
+                                @if(isset($galeria))
+                                <form method="post" action="{{ route('secciones.update',$galeria->id) }}">
+                                    @csrf
+                                    @method('PATCH')
+                                    <label for="">Banner:</label>
+                                    <input type="hidden" id="seccion" name="seccion" value="galeria">
+                                    <div class="col-sm-12 col-lg-12">
+                                        <input type="file" id="banner" name="banner" accept="image/png, image/jpeg">
+                                    </div>
+                                    <br><br>
+                                    <div>
+                                        <input style="width: 49%;" value="{{$galeria->titulo}}" name="titulo" id="titulo" type="text" placeholder="Título">
+                                    </div>
+                                    <br>
+                                    <br>
+                                    <div><textarea name="descripcion" id="descripcion" cols="60" rows="10" placeholder="Descripcion">{{$galeria->descripcion}}</textarea></div>
+                                    <div><button type="submit" style="width: 200px;float: right;" class="btn btn-primary">Guardar</button></div>
+                                </form>
+                                @else
+                                <form method="post" action="{{ route('secciones.store') }}">
+                                    @csrf
+                                    <label for="">Banner:</label>
+                                    <input type="hidden" id="seccion" name="seccion" value="galeria">
+                                    <div class="col-sm-12 col-lg-12">
+                                        <input type="file" id="banner" name="banner" accept="image/png, image/jpeg">
+                                    </div>
+                                    <br><br>
+                                    <div>
+                                        <input style="width: 49%;" name="titulo" id="titulo" type="text" placeholder="Título">
+                                    </div>
+                                    <br>
+                                    <br>
+                                    <div><textarea name="descripcion" id="descripcion" cols="60" rows="10" placeholder="Descripcion"></textarea></div>
+                                    <div><button type="submit" style="width: 200px;float: right;" class="btn btn-primary">Guardar</button></div>
+                                </form>
+                                @endif
                             </div>
                         </div>
                     </div>
                     <div class="col-md-12">
-                        <center>
-                            <!-- form para el carrousel de las fotos del producto -->
-                            <div id="carouselExampleControls" class="carousel carousel-dark slide carousel-fade" data-bs-ride="carousel">
-                                <!-- <div class="carousel-indicators">
-                                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                                        </div> -->
-                                <div class="carousel-inner" style="width: 500px; height: 400px;">
+                        <div class="col-lg-3 col-md-6 mb-4">
+                            <div class="card">
+                                <!--Card image-->
+                                <div class="view overlay">
+                                    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                                        <div class="carousel-inner">
 
-                                    <div class="carousel-item active">
-                                        <img id="item-display" src="{{asset('img/banner.png')}}" class="d-block w-100" height="300px" width="300px" alt="..." style="border-radius: 20px;">
-                                        <div class="carousel-caption">
-                                            <h3>Los Angeles</h3>
-                                            <p>LA is always so much fun!</p>
+                                            <div class="carousel-item">
+                                                <img src="{{asset('img/banner.png')}}" height="200" class="d-block w-100" alt="...">
+                                            </div>
+
                                         </div>
+
                                     </div>
-                                    <div class="carousel-item">
-                                        <img id="item-display" src="{{asset('img/mine.jpg')}}" class="d-block w-100" height="300px" width="300px" alt="..." style="border-radius: 20px;">
-                                        <div class="carousel-caption">
-                                            <h3>Los Angeles</h3>
-                                            <p>LA is always so much fun!</p>
-                                        </div>
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img id="item-display" src="{{asset('img/banner.png')}}" class="d-block w-100" height="300px" width="300px" alt="..." style="border-radius: 20px;">
-                                        <div class="carousel-caption">
-                                            <h3>Los Angeles</h3>
-                                            <p>LA is always so much fun!</p>
-                                        </div>
-                                    </div>
-                                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                        <span class="sr-only">Previous</span>
-                                    </a>
-                                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                        <span class="sr-only">Next</span>
+                                    <a>
+                                        <div class="mask rgba-white-slight"></div>
                                     </a>
                                 </div>
+                                <div class="card-body text-center">
+
+                                    <input type="file" id="banner" name="banner" accept="image/png, image/jpeg">
+                                    <button id=" btn_carrito" name="btn_carrito" value="btn_carrito" type="submit" class="btn btn-primary" style="display: inline-block;"><i class="fas fa-cart-plus"></i></button>
+                                    <button id=" btn_deseo" name="btn_deseo" value="btn_deseo" type="submit" class="btn btn-primary" style="display: inline-block;"><i class="fas fa-heart"></i></button>
+
+
+                                </div>
+                                <style>
+                                    html,
+                                    body,
+                                    header,
+                                    .carousel {
+                                        height: 60vh;
+                                    }
+
+                                    @media (max-width: 740px) {
+
+                                        html,
+                                        body,
+                                        header,
+                                        .carousel {
+                                            height: 100vh;
+                                        }
+                                    }
+
+                                    @media (min-width: 800px) and (max-width: 850px) {
+
+                                        html,
+                                        body,
+                                        header,
+                                        .carousel {
+                                            height: 100vh;
+                                        }
+                                    }
+
+                                    .view,
+                                    body,
+                                    html {
+                                        height: 100%
+                                    }
+
+                                    .carousel {
+                                        height: 50%
+                                    }
+
+                                    .carousel .carousel-inner,
+                                    .carousel .carousel-inner .active,
+                                    .carousel .carousel-inner .carousel-item {
+                                        height: 50%
+                                    }
+                                </style>
                             </div>
-                            <br><br><br><br><br>
-                        </center>
+                        </div>
                     </div>
 
                 </div>
@@ -225,18 +371,60 @@
                     <div class="jumbotron jumbotron-sm">
                         <div class="container">
                             <div class="row">
-                                <label for="">Banner:</label>
-                                <div class="col-sm-12 col-lg-12">
-                                    <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg">
+                                @if(isset($contacto))
+                                <form method="post" action="{{ route('secciones.update',$contacto->id) }}">
+                                    @csrf
+                                    @method('PATCH')
+                                    <label for="">Banner:</label>
+                                    <input type="hidden" id="seccion" name="seccion" value="contacto">
+                                    <div class="col-sm-12 col-lg-12">
+                                        <input type="file" id="banner" name="banner" accept="image/png, image/jpeg">
+                                    </div>
+                                    <br><br>
+                                    <div>
+                                        <input style="width: 49%;" value="{{$contacto->titulo}}" name="titulo" id="titulo" type="text" placeholder="Título">
+                                    </div>
+                                    <br>
+                                    <br>
+                                    <div><textarea name="descripcion" id="descripcion" cols="60" rows="10" placeholder="Descripcion">{{$contacto->descripcion}}</textarea></div>
+                                    <div><button type="submit" style="width: 200px;float: right;" class="btn btn-primary">Guardar</button></div>
+                                </form>
+                                @else
+                                <form method="post" action="{{ route('secciones.store') }}">
+                                    @csrf
+                                    <label for="">Banner:</label>
+                                    <input type="hidden" id="seccion" name="seccion" value="contacto">
+                                    <div class="col-sm-12 col-lg-12">
+                                        <input type="file" id="banner" name="banner" accept="image/png, image/jpeg">
+                                    </div>
+                                    <br><br>
+                                    <div>
+                                        <input style="width: 49%;" name="titulo" id="titulo" type="text" placeholder="Título">
+                                    </div>
+                                    <br>
+                                    <br>
+                                    <div><textarea name="descripcion" id="descripcion" cols="60" rows="10" placeholder="Descripcion"></textarea></div>
+                                    <div><button type="submit" style="width: 200px;float: right;" class="btn btn-primary">Guardar</button></div>
+                                </form>
+                                @endif
+                            </div>
+                            <hr>
+                            <div class="col-md-12">
+                                <label for="">Servicios</label>
+                                <div id="tableview2">
+                                    <table class="table table-striped table-dark" id="table">
+                                        <thead>
+                                            <tr align="center">
+                                                <td>Nombre </td>
+                                                <td>Correo</td>
+                                                <td>Mensaje</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="tbTable">
+
+                                        </tbody>
+                                    </table>
                                 </div>
-                                <br><br>
-                                <div><input style="width: 49%;" name="titulo" id="titulo" type="text" placeholder="Título"></div>
-
-                                <br>
-                                <br>
-                                <div><textarea name="Detalle" id="Detalle" cols="60" rows="10" placeholder="Detalle"></textarea></div>
-                                <div><button style="width: 200px;float: right;" class="btn btn-primary">Guardar</button></div>
-
                             </div>
                         </div>
                     </div>

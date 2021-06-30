@@ -25,7 +25,7 @@ class SeccionesController extends Controller
      */
     public function create()
     {
-        return view('administrador');
+        return view('admin');
     }
 
     /**
@@ -36,18 +36,17 @@ class SeccionesController extends Controller
      */
     public function store(Request $request)
     {
-        $file = $request->file('banner');
-        $nombre = $file->getClientOriginalName();
+     
         $storeData = $request->validate([
             'titulo' => 'required|max:200',
             'descripcion' => 'required|max:500',
             'seccion' => 'required|max:100',
-            'banner' => $nombre
+            'banner' => 'required|max:200'
         ]);
     
         $secciones = Secciones::create($storeData);
 
-        return redirect('/administrador')->with('completed', 'Inicio created!');
+        return redirect('/admin')->with('completed', 'Inicio created!');
     }
 
 
@@ -60,16 +59,16 @@ class SeccionesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $file = $request->file('banner');
-        $nombre = $file->getClientOriginalName();
+        // $file = $request->file('banner');
+        // $nombre = $file->getClientOriginalName();
         $storeData = $request->validate([
             'titulo' => 'required|max:200',
             'descripcion' => 'required|max:500',
             'seccion' => 'required|max:100',
-            'banner' => $nombre
+            'banner' => 'required|max:200'
         ]);
     
         Secciones::whereId($id)->update($storeData);
-        return redirect('/administrador')->with('completed', 'Inicio updated');
+        return redirect('/admin')->with('completed', 'Inicio updated');
     }
 }
