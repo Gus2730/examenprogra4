@@ -309,7 +309,7 @@
                                                     <span aria-hidden="true">&times;</span>
                                                 </button>
                                             </div>
-                                            <form method="post" action="{{ route('servicios.store') }}" >
+                                            <form method="post" action="{{ route('servicios.store') }}">
                                                 @csrf
                                                 <div class="modal-body">
                                                     <div class="col-12">
@@ -498,7 +498,7 @@
                             </div>
                             <hr>
                             <div class="col-md-12">
-                                <label for="">Servicios</label>
+                                <label for="">Contactos</label>
                                 <div id="tableview2">
                                     <table class="table table-striped table-dark" id="table">
                                         <thead>
@@ -509,7 +509,13 @@
                                             </tr>
                                         </thead>
                                         <tbody id="tbTable">
-
+                                            @foreach($contactos as $c)
+                                            <tr>
+                                                <td>{{$c->nombre}}</td>
+                                                <td>{{$c->correo}}</td>
+                                                <td>{{$c->comentario}}</td>
+                                            </tr>
+                                            @endforeach
                                         </tbody>
                                     </table>
                                 </div>
