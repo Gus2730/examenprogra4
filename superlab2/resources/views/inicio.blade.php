@@ -120,11 +120,11 @@
                             </div>
                             <div class="container">
                                 <div class="row">
-                                    <div class="col-12">
+                                    <div class="col-12" style="border-bottom: 1px solid #253341;">
                                         <div class="form-group">
-                                            <h5><label class="col-1-left" for="">
+                                            <h3><label class="col-1-left" for="">
                                                     Descripción:
-                                                </label></h5>
+                                                </label></h3>
                                             @if(isset($inicio))
                                             <label style="text-align:justify;" for=""> {{$inicio->descripcion}}</label>
                                             @else
@@ -155,11 +155,11 @@
                             </div>
                             <div class="container">
                                 <div class="row">
-                                    <div class="col-12">
+                                    <div class="col-12" style="border-bottom: 1px solid #253341;">
                                         <div class="form-group">
-                                            <h5><label for="">
+                                            <h3><label for="">
                                                     Descripción:
-                                                </label></h5>
+                                                </label></h3>
                                             @if(isset($somos))
                                             <label style="text-align:justify;" for=""> {{$somos->descripcion}}</label>
                                             @else
@@ -190,28 +190,30 @@
                             </div>
                             <div class="container">
                                 <div class="row">
-                                    <div class="col-12">
+                                    <div class="col-12" style="border-bottom: 1px solid #253341;">
                                         <div class="form-group">
-                                            <h5><label for="">
+                                            <h3><label for="">
                                                     Descripción:
-                                                </label></h5>
+                                                </label></h3>
                                             @if(isset($servicio))
                                             <label style="text-align:justify;" for=""> {{$servicio->descripcion}}</label>
                                             @else
                                             <label style="text-align:justify;" for="">Ejemplo descripcion</label>
                                             @endif
-                                            <div>
-                                                @foreach ($servicios as $ser)
-                                                <div style="border: 1px solid #358CCE;">
-                                                    <h1>{{$ser->nombre}}</h1>
-                                                    <h4>{{$ser->descripcion}}</h4>
-                                                </div>
-                                                <br>
-                                                @endforeach
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+                            <br>
+                            <div class="col-md-12">
+                                <h2>Listado de servicios:</h2>
+                                @foreach ($servicios as $ser)
+                                <div style="border: 1px solid #253341; border-top: 1px solid #1DA1F2;">
+                                    <h3 style="text-align: left;">{{$ser->nombre}}:</h3>
+                                    <h4 style="text-align: left;">{{$ser->descripcion}}</h4>
+                                </div>
+                                <br>
+                                @endforeach
                             </div>
                         </div>
                         <div class="tab-pane container" id="service-fourth">
@@ -220,11 +222,11 @@
                                     <div class="row">
                                         <div class="col-sm-12 col-lg-12">
                                             @if(isset($galeria))
-                                            <h1 class="h3" id="titulo1">
+                                            <h1 class="h1" id="titulo1">
                                                 {{$galeria->titulo}}
                                             </h1>
                                             @else
-                                            <h1 class="h3" id="titulo1">
+                                            <h1 class="h1" id="titulo1">
                                                 Ejemplo titulo
                                             </h1>
                                             @endif
@@ -234,11 +236,11 @@
                             </div>
                             <div class="container">
                                 <div class="row">
-                                    <div class="col-12">
+                                    <div class="col-12" style="border-bottom: 1px solid #253341;">
                                         <div class="form-group">
-                                            <h5><label for="">
+                                            <h3><label for="">
                                                     Descripción:
-                                                </label></h5>
+                                                </label></h3>
                                             @if(isset($galeria))
                                             <label style="text-align:justify;" for=""> {{$galeria->descripcion}}</label>
                                             @else
@@ -248,50 +250,32 @@
                                     </div>
                                 </div>
                             </div>
+                            <br>
                             <div class="col-md-12">
-                                <center>
-                                    <!-- form para el carrousel de las fotos del producto -->
-                                    <div id="carouselExampleControls" class="carousel carousel-dark slide carousel-fade" data-bs-ride="carousel">
-                                        <div class="carousel-inner" style="width: 500px; height: 400px;">
-                                            @foreach ($galerias as $gal)
-                                            <div class="carousel-item @if($loop->index==0) active @endif ">
-                                                <img id="item-display" src="{{asset('img/'.$gal->imagen)}}" class="d-block w-100" height="300px" width="300px" alt="..." style="border-radius: 20px;">
-                                                <div class="carousel-caption">
-                                                    <p>{{$gal->descripcion}}</p>
-                                                </div>
+                                <h3>Listado de imagenes:</h3>
+                                <div id="carouselExampleControls" class="carousel carousel-dark slide carousel-fade" data-bs-ride="carousel">
+                                    <div class="carousel-inner" style="width: 500px; height: 400px;">
+                                        @foreach ($galerias as $gal)
+                                        <div class="carousel-item @if($loop->index==0) active @endif ">
+                                            <img id="item-display" src="{{asset('img/'.$gal->imagen)}}" class="d-block w-100" height="300px" width="300px" alt="..." style="border-radius: 20px;">
+                                            <div class="carousel-caption">
+                                                <p>{{$gal->descripcion}}</p>
                                             </div>
-                                            @endforeach
-                                            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                                <span class="sr-only">Previous</span>
-                                            </a>
-                                            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                                <span class="sr-only">Next</span>
-                                            </a>
                                         </div>
+                                        @endforeach
+                                        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                            <span class="sr-only">Previous</span>
+                                        </a>
+                                        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                            <span class="sr-only">Next</span>
+                                        </a>
                                     </div>
-                                    <br><br><br><br><br>
-                                </center>
+                                </div>
                             </div>
-                            <style>
-                                .carousel-caption {
-                                    position: absolute;
-                                    height: 400px;
-                                    right: 15%;
-                                    top: 300px;
-                                    left: 15%;
-                                    z-index: 10;
-                                    padding-top: 20px;
-                                    padding-bottom: 20px;
-                                    color: #fff;
-                                    text-align: center;
-                                }
-                            </style>
                         </div>
                         <div class="tab-pane container" id="service-five">
-                            <!------ Include the above in your HEAD tag ---------->
-
                             <div class="jumbotron jumbotron-sm">
                                 <div class="container">
                                     <div class="row">
@@ -312,89 +296,106 @@
                             </div>
                             <div class="container">
                                 <div class="row">
-                                    <div class="col-md-12">
-                                        <br>
-                                        <h5><label for="">
+                                    <div class="col-md-12" style="border-bottom: 1px solid #253341;">
+                                        <h3><label for="">
                                                 Descripción:
-                                            </label></h5>
+                                            </label></h3>
                                         @if(isset($contacto))
                                         <label style="text-align:justify;" for=""> {{$contacto->descripcion}}</label>
                                         @else
                                         <label style="text-align:justify;" for="">Ejemplo descripcion</label>
                                         @endif
-                                        <div class="well well-sm">
-                                            <form method="post" action="{{ route('contactos.store') }}">
-                                                @csrf
-                                                <div class="row">
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label for="nombre">
-                                                                Nombre</label>
-                                                            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingrese el nombre" required="required" />
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label for="correo">
-                                                                Correo electronico</label>
-                                                            <div class="input-group">
-                                                                <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span>
-                                                                </span>
-                                                                <input type="email" class="form-control" id="coreeo" name="correo" placeholder="Ingrese el correo" required="required" />
-                                                            </div>
-                                                        </div>
 
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label for="comentario">
-                                                                Comentario</label>
-                                                            <textarea name="comentario" id="comentario" class="form-control" rows="9" cols="25" required="required" placeholder="Mensaje"></textarea>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-12">
-                                                        <button type="submit" class="btn btn-primary pull-right" id="btnContactUs">
-                                                            Enviar</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="col-md-12">
+                                <h3>Formulario de contacto:</h3>
+                                <div class="well well-sm">
+                                    <form method="post" action="{{ route('contactos.store') }}">
+                                        @csrf
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="nombre">
+                                                        Nombre</label>
+                                                    <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingrese el nombre" required="required" />
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="correo">
+                                                        Correo electronico</label>
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span>
+                                                        </span>
+                                                        <input type="email" class="form-control" id="coreeo" name="correo" placeholder="Ingrese el correo" required="required" />
                                                     </div>
                                                 </div>
-                                            </form>
+
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="comentario">
+                                                        Comentario</label>
+                                                    <textarea name="comentario" id="comentario" class="form-control" rows="9" cols="25" required="required" placeholder="Mensaje"></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <button type="submit" class="btn btn-primary pull-right" id="btnContactUs">
+                                                    Enviar</button>
+                                            </div>
                                         </div>
-                                    </div>
-
+                                    </form>
                                 </div>
-
-
                             </div>
-                            <style>
-                                @import url('https://fonts.googleapis.com/css?family=Lobster');
 
-                                body {
-                                    background-color: darkslategray;
-                                    font-family: 'Lobster';
-                                }
-
-                                .jumbotron {
-                                    background: #358CCE;
-                                    color: #FFF;
-                                }
-
-                                .jumbotron-sm {
-                                    padding-top: 5px;
-                                    padding-bottom: 5px;
-                                }
-
-                                .jumbotron small {
-                                    color: #FFF;
-                                }
-
-                                #titulo1 small {
-                                    font-size: 24px;
-                                }
-                            </style>
                         </div>
                     </div>
                 </div>
             </center>
         </div>
     </div>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Lobster');
+
+        body {
+            background-color: darkslategray;
+            font-family: 'Lobster';
+        }
+
+        .jumbotron {
+            background: #358CCE;
+            color: #FFF;
+            border-radius: 5px;
+        }
+
+        .jumbotron-sm {
+
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+
+        .jumbotron small {
+            color: #FFF;
+        }
+
+        #titulo1 small {
+            font-size: 24px;
+        }
+
+        .carousel-caption {
+            position: absolute;
+            height: 400px;
+            right: 15%;
+            top: 300px;
+            left: 15%;
+            z-index: 10;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            color: #fff;
+            text-align: center;
+        }
+    </style>
     <script>
         function cambiarBanner(img) {
             var imagen = document.getElementById("imgBanner");
