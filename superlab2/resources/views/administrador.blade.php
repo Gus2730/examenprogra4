@@ -95,13 +95,13 @@
                         <div class="container">
                             <div class="row">
                                 @if(isset($inicio))
-                                <form method="post" action="{{ route('secciones.update',$inicio->id) }}">
+                                <form method="post" action="{{ route('secciones.update',$inicio->id) }}" enctype="multipart/form-data">
                                     @csrf
                                     @method('PATCH')
                                     <label for="">Banner:</label>
                                     <input type="hidden" id="seccion" name="seccion" value="inicio">
                                     <div class="col-sm-12 col-lg-12">
-                                        <input type="file" id="banner" name="banner" accept="image/png, image/jpeg">
+                                        <input type="file" id="bannerr" name="bannerr" accept="image/png, image/jpeg">
                                     </div>
                                     <br><br>
                                     <div>
@@ -113,12 +113,12 @@
                                     <div><button type="submit" style="width: 200px;float: right;" class="btn btn-primary">Guardar</button></div>
                                 </form>
                                 @else
-                                <form method="post" action="{{ route('secciones.store') }}">
+                                <form method="post" action="{{ route('secciones.store') }}" enctype="multipart/form-data">
                                     @csrf
                                     <label for="">Banner:</label>
                                     <input type="hidden" id="seccion" name="seccion" value="inicio">
                                     <div class="col-sm-12 col-lg-12">
-                                        <input type="file" id="banner" name="banner" accept="image/png, image/jpeg">
+                                        <input type="file" id="bannerr" name="bannerr" accept="image/png, image/jpeg">
                                     </div>
                                     <br><br>
                                     <div>
@@ -141,13 +141,13 @@
                         <div class="container">
                             <div class="row">
                                 @if(isset($somos))
-                                <form method="post" action="{{ route('secciones.update',$somos->id) }}">
+                                <form method="post" action="{{ route('secciones.update',$somos->id) }}" enctype="multipart/form-data">
                                     @csrf
                                     @method('PATCH')
                                     <label for="">Banner:</label>
                                     <input type="hidden" id="seccion" name="seccion" value="somos">
                                     <div class="col-sm-12 col-lg-12">
-                                        <input type="file" id="banner" name="banner" accept="image/png, image/jpeg">
+                                        <input type="file" id="bannerr" name="bannerr" accept="image/png, image/jpeg">
                                     </div>
                                     <br><br>
                                     <div>
@@ -159,12 +159,12 @@
                                     <div><button type="submit" style="width: 200px;float: right;" class="btn btn-primary">Guardar</button></div>
                                 </form>
                                 @else
-                                <form method="post" action="{{ route('secciones.store') }}">
+                                <form method="post" action="{{ route('secciones.store') }}" enctype="multipart/form-data">
                                     @csrf
                                     <label for="">Banner:</label>
                                     <input type="hidden" id="seccion" name="seccion" value="somos">
                                     <div class="col-sm-12 col-lg-12">
-                                        <input type="file" id="banner" name="banner" accept="image/png, image/jpeg">
+                                        <input type="file" id="bannerr" name="bannerr" accept="image/png, image/jpeg">
                                     </div>
                                     <br><br>
                                     <div>
@@ -187,13 +187,13 @@
                         <div class="container">
                             <div class="row">
                                 @if(isset($servicio))
-                                <form method="post" action="{{ route('secciones.update',$servicio->id) }}">
+                                <form method="post" action="{{ route('secciones.update',$servicio->id) }}" enctype="multipart/form-data">
                                     @csrf
                                     @method('PATCH')
                                     <label for="">Banner:</label>
                                     <input type="hidden" id="seccion" name="seccion" value="servicio">
                                     <div class="col-sm-12 col-lg-12">
-                                        <input type="file" id="banner" name="banner" accept="image/png, image/jpeg">
+                                        <input type="file" id="bannerr" name="bannerr" accept="image/png, image/jpeg">
                                     </div>
                                     <br><br>
                                     <div>
@@ -205,12 +205,12 @@
                                     <div><button type="submit" style="width: 200px;float: right;" class="btn btn-primary">Guardar</button></div>
                                 </form>
                                 @else
-                                <form method="post" action="{{ route('secciones.store') }}">
+                                <form method="post" action="{{ route('secciones.store') }}" enctype="multipart/form-data">
                                     @csrf
                                     <label for="">Banner:</label>
                                     <input type="hidden" id="seccion" name="seccion" value="servicio">
                                     <div class="col-sm-12 col-lg-12">
-                                        <input type="file" id="banner" name="banner" accept="image/png, image/jpeg">
+                                        <input type="file" id="bannerr" name="bannerr" accept="image/png, image/jpeg">
                                     </div>
                                     <br><br>
                                     <div>
@@ -252,13 +252,13 @@
                         <div class="container">
                             <div class="row">
                                 @if(isset($galeria))
-                                <form method="post" action="{{ route('secciones.update',$galeria->id) }}">
+                                <form method="post" action="{{ route('secciones.update',$galeria->id) }}" enctype="multipart/form-data">
                                     @csrf
                                     @method('PATCH')
                                     <label for="">Banner:</label>
                                     <input type="hidden" id="seccion" name="seccion" value="galeria">
                                     <div class="col-sm-12 col-lg-12">
-                                        <input type="file" id="banner" name="banner" accept="image/png, image/jpeg">
+                                        <input type="file" id="bannerr" name="bannerr" accept="image/png, image/jpeg">
                                     </div>
                                     <br><br>
                                     <div>
@@ -270,12 +270,12 @@
                                     <div><button type="submit" style="width: 200px;float: right;" class="btn btn-primary">Guardar</button></div>
                                 </form>
                                 @else
-                                <form method="post" action="{{ route('secciones.store') }}">
+                                <form method="post" action="{{ route('secciones.store') }}" enctype="multipart/form-data">
                                     @csrf
                                     <label for="">Banner:</label>
                                     <input type="hidden" id="seccion" name="seccion" value="galeria">
                                     <div class="col-sm-12 col-lg-12">
-                                        <input type="file" id="banner" name="banner" accept="image/png, image/jpeg">
+                                        <input type="file" id="bannerr" name="bannerr" accept="image/png, image/jpeg">
                                     </div>
                                     <br><br>
                                     <div>
@@ -311,7 +311,7 @@
                                 </div>
                                 <div class="card-body text-center">
 
-                                    <input type="file" id="banner" name="banner" accept="image/png, image/jpeg">
+                                    <input type="file" id="bannerr" name="bannerr" accept="image/png, image/jpeg">
                                     <button id=" btn_carrito" name="btn_carrito" value="btn_carrito" type="submit" class="btn btn-primary" style="display: inline-block;"><i class="fas fa-cart-plus"></i></button>
                                     <button id=" btn_deseo" name="btn_deseo" value="btn_deseo" type="submit" class="btn btn-primary" style="display: inline-block;"><i class="fas fa-heart"></i></button>
 
@@ -372,13 +372,13 @@
                         <div class="container">
                             <div class="row">
                                 @if(isset($contacto))
-                                <form method="post" action="{{ route('secciones.update',$contacto->id) }}">
+                                <form method="post" action="{{ route('secciones.update',$contacto->id) }}" enctype="multipart/form-data">
                                     @csrf
                                     @method('PATCH')
                                     <label for="">Banner:</label>
                                     <input type="hidden" id="seccion" name="seccion" value="contacto">
                                     <div class="col-sm-12 col-lg-12">
-                                        <input type="file" id="banner" name="banner" accept="image/png, image/jpeg">
+                                        <input type="file" id="bannerr" name="bannerr" accept="image/png, image/jpeg">
                                     </div>
                                     <br><br>
                                     <div>
@@ -390,12 +390,12 @@
                                     <div><button type="submit" style="width: 200px;float: right;" class="btn btn-primary">Guardar</button></div>
                                 </form>
                                 @else
-                                <form method="post" action="{{ route('secciones.store') }}">
+                                <form method="post" action="{{ route('secciones.store') }}" enctype="multipart/form-data">
                                     @csrf
                                     <label for="">Banner:</label>
                                     <input type="hidden" id="seccion" name="seccion" value="contacto">
                                     <div class="col-sm-12 col-lg-12">
-                                        <input type="file" id="banner" name="banner" accept="image/png, image/jpeg">
+                                        <input type="file" id="bannerr" name="bannerr" accept="image/png, image/jpeg">
                                     </div>
                                     <br><br>
                                     <div>

@@ -36,14 +36,20 @@ class SeccionesController extends Controller
      */
     public function store(Request $request)
     {
-     
+        if ($request->hasfile('bannerr')) {
+            $file = $request->file('bannerr');
+            $extension = $file->getClientOriginalExtension(); // getting image extension
+            $filename = time() . '.' . $extension;
+            $request->request->add(['banner' => $filename]);
+            $file->move('img/', $filename);
+        }
         $storeData = $request->validate([
             'titulo' => 'required|max:200',
             'descripcion' => 'required|max:500',
             'seccion' => 'required|max:100',
             'banner' => 'required|max:200'
         ]);
-    
+
         $secciones = Secciones::create($storeData);
 
         return redirect('/admin')->with('completed', 'Inicio created!');
@@ -59,15 +65,27 @@ class SeccionesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        // $file = $request->file('banner');
-        // $nombre = $file->getClientOriginalName();
-        $storeData = $request->validate([
-            'titulo' => 'required|max:200',
-            'descripcion' => 'required|max:500',
-            'seccion' => 'required|max:100',
-            'banner' => 'required|max:200'
-        ]);
-    
+        if ($request->hasfile('bannerr')) {
+            $file = $request->file('bannerr');
+            $extension = $file->getClientOriginalExtension(); // getting image extension
+            $filename = time() . '.' . $extension;
+            $request->request->add(['banner' => $filename]);
+            $file->move('img/', $filename);
+            $storeData = $request->validate([
+                'titulo' => 'required|max:200',
+                'descripcion' => 'required|max:500',
+                'seccion' => 'required|max:100',
+                'banner' => 'max:200'
+            ]);
+        } else {
+            $storeData = $request->validate([
+                'titulo' => 'required|max:200',
+                'descripcion' => 'required|max:500',
+                'seccion' => 'required|max:100'
+            ]);
+        }
+
+
         Secciones::whereId($id)->update($storeData);
         return redirect('/admin')->with('completed', 'Inicio updated');
     }

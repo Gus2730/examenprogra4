@@ -46,7 +46,11 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-sm-12 col-lg-12">
-                                <img src="{{asset('img/banner.png')}}" width="100%" height="150px">
+                                @if(isset($inicio))
+                                <img id="imgBanner" src="{{asset('img/'.$inicio->banner)}}" width="100%" height="150px">
+                                @else
+                                <img id="imgBanner" src="" width="100%" height="150px">
+                                @endif
                             </div>
                         </div>
                     </div>
@@ -56,19 +60,39 @@
                     <br>
                     <ul class="nav nav-pills justify-content-center">
                         <li class="nav-item">
+                            @if(isset($inicio))
+                            <a class="nav-link active" data-toggle="pill" onclick="cambiarBanner('{{$inicio->banner}}')" href="#service-one">Inicio</a>
+                            @else
                             <a class="nav-link active" data-toggle="pill" href="#service-one">Inicio</a>
+                            @endif
                         </li>
                         <li class="nav-item">
+                            @if(isset($somos))
+                            <a class="nav-link" data-toggle="pill" onclick="cambiarBanner('{{$somos->banner}}')" href="#service-two">¿Quienes somos?</a>
+                            @else
                             <a class="nav-link" data-toggle="pill" href="#service-two">¿Quienes somos?</a>
+                            @endif
                         </li>
                         <li class="nav-item">
+                            @if(isset($servicio))
+                            <a class="nav-link" data-toggle="pill" onclick="cambiarBanner('{{$servicio->banner}}')" href="#service-three">Servicios</a>
+                            @else
                             <a class="nav-link" data-toggle="pill" href="#service-three">Servicios</a>
+                            @endif
                         </li>
                         <li class="nav-item">
+                            @if(isset($galeria))
+                            <a class="nav-link" data-toggle="pill" onclick="cambiarBanner('{{$galeria->banner}}')" href="#service-fourth">Galería</a>
+                            @else
                             <a class="nav-link" data-toggle="pill" href="#service-fourth">Galería</a>
+                            @endif
                         </li>
                         <li class="nav-item">
+                            @if(isset($contacto))
+                            <a class="nav-link" data-toggle="pill" onclick="cambiarBanner('{{$contacto->banner}}')" href="#service-five">Contacto</a>
+                            @else
                             <a class="nav-link" data-toggle="pill" href="#service-five">Contacto</a>
+                            @endif
                         </li>
                     </ul>
 
@@ -111,7 +135,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="tab-pane container" id="service-two" style="font-size: 18px;">
                             <div class="jumbotron jumbotron-sm">
                                 <div class="container">
@@ -179,10 +202,11 @@
                                             @endif
                                             <div>
                                                 @foreach ($servicios as $ser)
-                                                <div>
+                                                <div style="border: 1px solid #358CCE;">
                                                     <h1>{{$ser->nombre}}</h1>
                                                     <h4>{{$ser->descripcion}}</h4>
                                                 </div>
+                                                <br>
                                                 @endforeach
                                             </div>
                                         </div>
@@ -196,11 +220,11 @@
                                     <div class="row">
                                         <div class="col-sm-12 col-lg-12">
                                             @if(isset($galeria))
-                                            <h1 class="h1" id="titulo1">
+                                            <h1 class="h3" id="titulo1">
                                                 {{$galeria->titulo}}
                                             </h1>
                                             @else
-                                            <h1 class="h1" id="titulo1">
+                                            <h1 class="h3" id="titulo1">
                                                 Ejemplo titulo
                                             </h1>
                                             @endif
@@ -390,6 +414,12 @@
             </center>
         </div>
     </div>
+    <script>
+        function cambiarBanner(img) {
+            var imagen = document.getElementById("imgBanner");
+            imagen.src = "img/" + img;
+        }
+    </script>
 
 </body>
 
