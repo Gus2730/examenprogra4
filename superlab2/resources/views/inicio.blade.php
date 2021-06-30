@@ -252,34 +252,15 @@
                                 <center>
                                     <!-- form para el carrousel de las fotos del producto -->
                                     <div id="carouselExampleControls" class="carousel carousel-dark slide carousel-fade" data-bs-ride="carousel">
-                                        <!-- <div class="carousel-indicators">
-                                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                                        </div> -->
                                         <div class="carousel-inner" style="width: 500px; height: 400px;">
-
-                                            <div class="carousel-item active">
-                                                <img id="item-display" src="{{asset('img/banner.png')}}" class="d-block w-100" height="300px" width="300px" alt="..." style="border-radius: 20px;">
+                                            @foreach ($galerias as $gal)
+                                            <div class="carousel-item @if($loop->index==0) active @endif ">
+                                                <img id="item-display" src="{{asset('img/'.$gal->imagen)}}" class="d-block w-100" height="300px" width="300px" alt="..." style="border-radius: 20px;">
                                                 <div class="carousel-caption">
-                                                    <h3>Los Angeles</h3>
-                                                    <p>LA is always so much fun!</p>
+                                                    <p>{{$gal->descripcion}}</p>
                                                 </div>
                                             </div>
-                                            <div class="carousel-item">
-                                                <img id="item-display" src="{{asset('img/mine.jpg')}}" class="d-block w-100" height="300px" width="300px" alt="..." style="border-radius: 20px;">
-                                                <div class="carousel-caption">
-                                                    <h3>Los Angeles</h3>
-                                                    <p>LA is always so much fun!</p>
-                                                </div>
-                                            </div>
-                                            <div class="carousel-item">
-                                                <img id="item-display" src="{{asset('img/banner.png')}}" class="d-block w-100" height="300px" width="300px" alt="..." style="border-radius: 20px;">
-                                                <div class="carousel-caption">
-                                                    <h3>Los Angeles</h3>
-                                                    <p>LA is always so much fun!</p>
-                                                </div>
-                                            </div>
+                                            @endforeach
                                             <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
                                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                                 <span class="sr-only">Previous</span>
