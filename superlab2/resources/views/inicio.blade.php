@@ -62,35 +62,35 @@
                             @if(isset($inicio))
                             <a class="nav-link active" data-toggle="pill" onclick="cambiarBanner('{{$inicio->banner}}')" href="#service-one">Inicio</a>
                             @else
-                            <a class="nav-link active" data-toggle="pill" href="#service-one">Inicio</a>
+                            <a class="nav-link active" data-toggle="pill" onclick="defaultBanner()" href="#service-one">Inicio</a>
                             @endif
                         </li>
                         <li class="nav-item">
                             @if(isset($somos))
                             <a class="nav-link" data-toggle="pill" onclick="cambiarBanner('{{$somos->banner}}')" href="#service-two">¿Quienes somos?</a>
                             @else
-                            <a class="nav-link" data-toggle="pill" href="#service-two">¿Quienes somos?</a>
+                            <a class="nav-link" data-toggle="pill"onclick="defaultBanner()" href="#service-two">¿Quienes somos?</a>
                             @endif
                         </li>
                         <li class="nav-item">
                             @if(isset($servicio))
                             <a class="nav-link" data-toggle="pill" onclick="cambiarBanner('{{$servicio->banner}}')" href="#service-three">Servicios</a>
                             @else
-                            <a class="nav-link" data-toggle="pill" href="#service-three">Servicios</a>
+                            <a class="nav-link" data-toggle="pill" onclick="defaultBanner()" href="#service-three">Servicios</a>
                             @endif
                         </li>
                         <li class="nav-item">
                             @if(isset($galeria))
                             <a class="nav-link" data-toggle="pill" onclick="cambiarBanner('{{$galeria->banner}}')" href="#service-fourth">Galería</a>
                             @else
-                            <a class="nav-link" data-toggle="pill" href="#service-fourth">Galería</a>
+                            <a class="nav-link" data-toggle="pill" onclick="defaultBanner()" href="#service-fourth">Galería</a>
                             @endif
                         </li>
                         <li class="nav-item">
                             @if(isset($contacto))
                             <a class="nav-link" data-toggle="pill" onclick="cambiarBanner('{{$contacto->banner}}')" href="#service-five">Contacto</a>
                             @else
-                            <a class="nav-link" data-toggle="pill" href="#service-five">Contacto</a>
+                            <a class="nav-link" data-toggle="pill" onclick="defaultBanner()" href="#service-five">Contacto</a>
                             @endif
                         </li>
                     </ul>
@@ -399,6 +399,11 @@
         function cambiarBanner(img) {
             var imagen = document.getElementById("imgBanner");
             var nomnbre = "img/" + img;
+            imagen.src = nomnbre;
+        }
+        function defaultBanner(){
+            var imagen = document.getElementById("imgBanner");
+            var nomnbre = "img/bannerDef.png";
             imagen.src = nomnbre;
         }
     </script>
