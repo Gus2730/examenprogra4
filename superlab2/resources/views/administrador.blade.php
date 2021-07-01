@@ -400,7 +400,7 @@
                                         @method('PATCH')
                                         <div class="card-body text-center">
                                             <input type="file" id="imagenes" name="imagenes" accept="image/png, image/jpeg"><br><br>
-                                            <div><textarea name="descripcion" id="descripcion" cols="60" rows="4" placeholder="Descripcion">{{$galerias[$i]->descripcion}}</textarea></div>
+                                            <div><textarea name="descripcion" id="descripcion" cols="40" rows="4" placeholder="Descripcion">{{$galerias[$i]->descripcion}}</textarea></div>
                                             <button id=" btn_carrito" name="btn_carrito" value="btn_carrito" type="submit" class="btn btn-primary" style="display: inline-block;">Cargar imagen</button>
                                         </div>
                                     </form>
@@ -426,7 +426,7 @@
                                         @csrf
                                         <div class="card-body text-center">
                                             <input type="file" id="imagenes" name="imagenes" accept="image/png, image/jpeg"><br><br>
-                                            <div><textarea name="descripcion" id="descripcion" cols="60" rows="4" placeholder="Descripcion"></textarea></div>
+                                            <div><textarea name="descripcion" id="descripcion" cols="40" rows="4" placeholder="Descripcion"></textarea></div>
                                             <button id=" btn_carrito" name="btn_carrito" value="btn_carrito" type="submit" class="btn btn-primary" style="display: inline-block;">Cargar imagen</button>
                                         </div>
                                     </form>
@@ -435,6 +435,11 @@
                             @endif
                             @endfor
                             <style>
+                                body {
+                                    background-color: darkslategray;
+                                    font-family: cursive;
+                                }
+
                                 html,
                                 body,
                                 header,
