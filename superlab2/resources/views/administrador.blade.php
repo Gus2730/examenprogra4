@@ -367,7 +367,7 @@
                                     </div>
                                     <br><br>
                                     <div>
-                                        <input style="width: 49%;" name="titulo" id="titulo" type="text" placeholder="Título">
+                                        <input name="titulo" id="titulo" type="text" placeholder="Título">
                                     </div>
                                     <br>
                                     <br>
@@ -378,79 +378,106 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-12">
-                        <div class="col-lg-3 col-md-6 mb-4">
-                            <div class="card">
-                                <!--Card image-->
-                                <div class="view overlay">
-                                    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-                                        <div class="carousel-inner">
-
-                                            <div class="carousel-item">
-                                                <img src="{{asset('img/banner.png')}}" height="200" class="d-block w-100" alt="...">
+                    <div class="row align-items">
+                        @for ($i = 0; $i < 5; $i++) @if(count($galerias)> $i)
+                            <div class="col-lg-6 col-md-6 mb-4">
+                                <div class="card">
+                                    <!--Card image-->
+                                    <div class="view overlay">
+                                        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                                            <div class="carousel-inner">
+                                                <div class="carousel-item active">
+                                                    <img src="{{asset('superlab2/img/'.$galerias[$i]->imagen)}}" height="200" class="d-block w-100" alt="...">
+                                                </div>
                                             </div>
-
                                         </div>
-
+                                        <a>
+                                            <div class="mask rgba-white-slight"></div>
+                                        </a>
                                     </div>
-                                    <a>
-                                        <div class="mask rgba-white-slight"></div>
-                                    </a>
+                                    <form method="post" action="{{ route('galeria.update',$galerias[$i]->id) }}" enctype="multipart/form-data">
+                                        @csrf
+                                        @method('PATCH')
+                                        <div class="card-body text-center">
+                                            <input type="file" id="imagenes" name="imagenes" accept="image/png, image/jpeg"><br><br>
+                                            <div><textarea name="descripcion" id="descripcion" cols="60" rows="4" placeholder="Descripcion">{{$galerias[$i]->descripcion}}</textarea></div>
+                                            <button id=" btn_carrito" name="btn_carrito" value="btn_carrito" type="submit" class="btn btn-primary" style="display: inline-block;">Cargar imagen</button>
+                                        </div>
+                                    </form>
                                 </div>
-                                <div class="card-body text-center">
-
-                                    <input type="file" id="bannerr" name="bannerr" accept="image/png, image/jpeg">
-                                    <button id=" btn_carrito" name="btn_carrito" value="btn_carrito" type="submit" class="btn btn-primary" style="display: inline-block;"><i class="fas fa-cart-plus"></i></button>
-                                    <button id=" btn_deseo" name="btn_deseo" value="btn_deseo" type="submit" class="btn btn-primary" style="display: inline-block;"><i class="fas fa-heart"></i></button>
-
-
+                            </div>
+                            @else
+                            <div class="col-lg-6 col-md-6 mb-4">
+                                <div class="card">
+                                    <!--Card image-->
+                                    <div class="view overlay">
+                                        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                                            <div class="carousel-inner">
+                                                <div class="carousel-item active">
+                                                    <img src="{{asset('superlab2/img/image-not-found.png')}}" height="200" class="d-block w-100" alt="...">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <a>
+                                            <div class="mask rgba-white-slight"></div>
+                                        </a>
+                                    </div>
+                                    <form method="post" action="{{ route('galeria.store')}}" enctype="multipart/form-data">
+                                        @csrf
+                                        <div class="card-body text-center">
+                                            <input type="file" id="imagenes" name="imagenes" accept="image/png, image/jpeg"><br><br>
+                                            <div><textarea name="descripcion" id="descripcion" cols="60" rows="4" placeholder="Descripcion"></textarea></div>
+                                            <button id=" btn_carrito" name="btn_carrito" value="btn_carrito" type="submit" class="btn btn-primary" style="display: inline-block;">Cargar imagen</button>
+                                        </div>
+                                    </form>
                                 </div>
-                                <style>
+                            </div>
+                            @endif
+                            @endfor
+                            <style>
+                                html,
+                                body,
+                                header,
+                                .carousel {
+                                    height: 60vh;
+                                }
+
+                                @media (max-width: 740px) {
+
                                     html,
                                     body,
                                     header,
                                     .carousel {
-                                        height: 60vh;
+                                        height: 100vh;
                                     }
+                                }
 
-                                    @media (max-width: 740px) {
+                                @media (min-width: 800px) and (max-width: 850px) {
 
-                                        html,
-                                        body,
-                                        header,
-                                        .carousel {
-                                            height: 100vh;
-                                        }
-                                    }
-
-                                    @media (min-width: 800px) and (max-width: 850px) {
-
-                                        html,
-                                        body,
-                                        header,
-                                        .carousel {
-                                            height: 100vh;
-                                        }
-                                    }
-
-                                    .view,
+                                    html,
                                     body,
-                                    html {
-                                        height: 100%
-                                    }
-
+                                    header,
                                     .carousel {
-                                        height: 50%
+                                        height: 100vh;
                                     }
+                                }
 
-                                    .carousel .carousel-inner,
-                                    .carousel .carousel-inner .active,
-                                    .carousel .carousel-inner .carousel-item {
-                                        height: 50%
-                                    }
-                                </style>
-                            </div>
-                        </div>
+                                .view,
+                                body,
+                                html {
+                                    height: 100%
+                                }
+
+                                .carousel {
+                                    height: 50%
+                                }
+
+                                .carousel .carousel-inner,
+                                .carousel .carousel-inner .active,
+                                .carousel .carousel-inner .carousel-item {
+                                    height: 50%
+                                }
+                            </style>
                     </div>
 
                 </div>

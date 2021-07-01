@@ -41,7 +41,7 @@ class SeccionesController extends Controller
             $extension = $file->getClientOriginalExtension(); // getting image extension
             $filename = time() . '.' . $extension;
             $request->request->add(['banner' => $filename]);
-            $file->move('img/', $filename);
+            $file->move('superlab2/img/', $filename);
         }
         $storeData = $request->validate([
             'titulo' => 'required|max:200',
@@ -70,7 +70,7 @@ class SeccionesController extends Controller
             $extension = $file->getClientOriginalExtension(); // getting image extension
             $filename = time() . '.' . $extension;
             $request->request->add(['banner' => $filename]);
-            $file->move('img/', $filename);
+            $file->move('superlab2/img/', $filename);
             $storeData = $request->validate([
                 'titulo' => 'required|max:200',
                 'descripcion' => 'required|max:500',

@@ -37,9 +37,17 @@ class GaleriaController extends Controller
      */
     public function store(Request $request)
     {
+        if ($request->hasfile('imagenes')) {
+            $file = $request->file('imagenes');
+            $extension = $file->getClientOriginalExtension(); // getting image extension
+            $filename = time() . '.' . $extension;
+            $request->request->add(['imagen' => $filename]);
+            $file->move('superlab2/img/', $filename);
+        }
         $storeData = $request->validate([
             'imagen' => 'required|max:200',
-            'descripcion' => 'required|max:500'
+            'descripcion' => 'required|max:500',
+
         ]);
         $galeria = Galerias::create($storeData);
 
@@ -58,5 +66,32 @@ class GaleriaController extends Controller
         $galeria->delete();
 
         return redirect('/superlab2/admin')->with('completed', 'Employee deleted');
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        if ($request->hasfile('imagenes')) {
+            $file = $request->file('imagenes');
+            $extension = $file->getClientOriginalExtension(); // getting image extension
+            $filename = time() . '.' . $extension;
+            $request->request->add(['imagen' => $filename]);
+            $file->move('superlab2/img/', $filename);
+        }
+        $storeData = $request->validate([
+            'imagen' => 'required|max:200',
+            'descripcion' => 'required|max:500',
+
+        ]);
+
+
+        Galerias::whereId($id)->update($storeData);
+        return redirect('/superlab2/admin')->with('completed', 'Inicio updated');
     }
 }
