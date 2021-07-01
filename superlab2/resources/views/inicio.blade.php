@@ -19,7 +19,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
@@ -47,7 +46,7 @@
                         <div class="row">
                             <div class="col-sm-12 col-lg-12">
                                 @if(isset($inicio))
-                                <img id="imgBanner" src="{{asset('img/'.$inicio->banner)}}" width="100%" height="150px">
+                                <img id="imgBanner" src="{{asset('/superlab2/img/'.$inicio->banner)}}" width="100%" height="150px">
                                 @else
                                 <img id="imgBanner" src="" width="100%" height="150px">
                                 @endif
@@ -257,7 +256,7 @@
                                     <div class="carousel-inner" style="width: 500px; height: 400px;">
                                         @foreach ($galerias as $gal)
                                         <div class="carousel-item @if($loop->index==0) active @endif ">
-                                            <img id="item-display" src="{{asset('img/'.$gal->imagen)}}" class="d-block w-100" height="300px" width="300px" alt="..." style="border-radius: 20px;">
+                                            <img id="item-display" src="{{asset('/superlab2/img/'.$gal->imagen)}}" class="d-block w-100" height="300px" width="300px" alt="..." style="border-radius: 20px;">
                                             <div class="carousel-caption">
                                                 <p>{{$gal->descripcion}}</p>
                                             </div>
@@ -399,10 +398,10 @@
     <script>
         function cambiarBanner(img) {
             var imagen = document.getElementById("imgBanner");
-            imagen.src = "img/" + img;
+            var nomnbre = "img/" + img;
+            imagen.src = nomnbre;
         }
     </script>
-
 </body>
 
 </html>
