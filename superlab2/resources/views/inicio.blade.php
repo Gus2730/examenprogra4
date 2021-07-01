@@ -355,11 +355,10 @@
         </div>
     </div>
     <style>
-        @import url('https://fonts.googleapis.com/css?family=Lobster');
 
         body {
             background-color: darkslategray;
-            font-family: 'Lobster';
+            font-family: cursive;
         }
 
         .jumbotron {
